@@ -12,36 +12,21 @@
 }
 
 
-.header {
+header {
   padding-top: 10px;
   padding-bottom: 10px;
-  min-width: 1000px;
-  background-color: white;
-  border-bottom: 1px solid white;
+  width: 980px;
+  margin: 0 auto;
+  height: 100px;
+  color: grey;
+
+  span {
+    color: black;
+    top: 36px;
+
+
 
 }
-
-.container {
-    width: 980px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: grey;
-    
-
-}
-
-.catlogo {
-  float: left;
-  margin-right: 10px;
-  margin-left: -2px;
-  white-space: nowrap;
-}
-    .catlogo.mega-octicon octicon-mark-github {
-      float: left;
-      width: 28px;
-      height: 28px;
-      font-size: 28px;
-   } 
 
 
 
