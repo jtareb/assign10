@@ -1,1 +1,1 @@
-var org.js = []
+var org = []

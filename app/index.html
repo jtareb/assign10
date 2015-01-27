@@ -68,16 +68,36 @@
 
         <div class="maincontent">
 
-            <div class="sidebar"></div>
+            <div class="sidebar">
+                
+
+            </div>
 
             <div class="contentbox">
+                <script type="text/template" id="item-user-template">
+        
+                    <div>
+                        <span class="classwork">
+                        <%=name%>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="description">
+                        <%= name %>
+                        </span>
+                    </div>
+                     
+
+
+
+                </script>
                 
                 <div class="subhdr"></div>
 
                 <div class="content"></div>
                                                       
                             
-                    </script>
+                    
             
             </div>
 
@@ -105,17 +125,13 @@
     <script src="../bower_components/underscore/underscore.js"></script>
 
 
-    <script type="text/template" id="item-template">
     
-
-
-    </script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
         
-        <script src="scripts/repo.js"></script>
+        <script src="scripts/repoapi.js"></script>
         <script src="scripts/user.js"></script>
         <script src="scripts/starred.js"></script>
         <script src="scripts/org.js"></script>
