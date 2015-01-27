@@ -1,5 +1,5 @@
 [
-var repo= {
+var repo_items = {
 "id": 25668738,
 "name": ".dotfiles",
 "full_name": "twhitacre/.dotfiles",
