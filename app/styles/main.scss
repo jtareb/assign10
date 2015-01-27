@@ -43,21 +43,46 @@ header {
     
       
 
-
-    }
-
+}
 
 
 .maincontent {
   width: 980px;
-  margin: 0 auto;
+  @include outer-container;
 }
 
 .sidebar {
-  width: 200px:
+  @include span-columns(3);
+  height: 300px;
+
+
+}
+
+.contentpages {
+  @include span-columns(9);
+}
+
+
+
+
+
+
+
+
+.classwork {
+  margin: 45px;
+  display: block;
+  color: hsla(209, 57%, 61%, 1);
+  font-size: 135%;
+  border-bottom: grey;
   
 }
 
+.desc {
+  margin: 45px;
+  display: block;
+  font-size: 80%;
+}
 
 
 
