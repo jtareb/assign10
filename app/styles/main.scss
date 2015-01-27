@@ -4,10 +4,9 @@
 
 // Custom Styles
 .body {
-  /*min-width: 1020px;
-  /*font:
-  /*color:
-  /*background-color:*/
+  width: 1426px;
+
+  
 
 }
 
@@ -15,26 +14,40 @@
 header {
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 980px;
+  width: 1000px;
   margin: 0 auto;
   height: 100px;
-  color: grey;
+  background-color: hsla(232, 1%, 74%, 0.82);
 
   span {
     float: left;
     color: black;
-    top: 36px;
+    margin-top: 25px;
 }
 
- input {
+  input {
     position: relative;
     float: left;
-    width: 170px;
-    margin-left: 30px;
-    top: 8px;
+    width: 370px;
+    margin-left: 20px;
+    top: 25px;
   }
+    span {
+      float: left;
+      margin-left: 20px;
+      top: 50px;
+      font-size: 85%;
+      font-weight: bold;
+    }
+
+    .buttons {
+      float: right;
+
+    }
 
 }
+
+
 
 
 
