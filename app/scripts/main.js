@@ -12,8 +12,9 @@
 _.each(repo_items,function(p) {
 		
 
-
+    var classwork = p.name;
 	var desc = p.description;
+
 
 	//console.log (desc);
 	console.log(p);
