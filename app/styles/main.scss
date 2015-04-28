@@ -3,24 +3,30 @@
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
-*{
-  margin: 0;
-  padding: 0;
-  list-style: none;
 
-}
+
 body{
+  background: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.container {
+  @include outer-container;
+  background-color: white;
+}
+
 
   header{
-    @include outer-container;
-    max-width: 100%;
-    background-color: #F5F5F5;
+    @include span-columns(12);
     height: 50px;
+    background-color: hsla(0, 0%, 96%, 1.0);
 
     .leftSide{
-      @include span-columns(6);
-      width: 100%;
-      float: left;
+      @include span-columns(8);
+      height: 100px;
+      background-color: hsla(0, 0%, 96%, 1.0);
+      padding-top: 12px;
 
       span{
         float: left;
@@ -32,59 +38,58 @@ body{
       }
 
       input{
-        position: relative;
-        left: 270px;
         width: 350px;
-        height: 30px;
-        top: -11px;
-        border-radius: 6px;
+        padding-top: 6px;
+      }
+
+      .search {
+        float: left;
+        margin-left: 5px;
       }
 
       .explore{
-        position: relative;
-        left: 635px;
-        top:-36px;
+        float: left;
+        padding-left: 10px;
         text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: 10pt;
+        color: hsla(0, 0%, 20%, 1);
+        font-size: 14px;
+        padding-top: 6px;
       }
 
       .gist{
-        position: relative;
-        left: 645px;
-        top:-36px;
+        float: left;
+        padding-left: 10px;
         text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: 10pt;
+        color: hsla(0, 0%, 20%, 1);
+        font-size: 14px;
+        padding-top:: 6px;
+
       }
 
       .blog{
-        position: relative;
-        left: 655px;
-        top:-36px;
+        float: left;
+        padding-left: 10px;
         text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: 10pt;
+        color: hsla(0, 0%, 20%, 1);
+        font-size: 14px;
+        padding-top:: 6px;
+        
       }
 
       .help{
-        position: relative;
-        left: 665px;
-        top:-36px;
+        float: left;
+        padding-left: 10px;
         text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: 10pt;
+        color: hsla(0, 0%, 20%, 1);
+        font-size: 14px;
+        padding-top:: 6px;
       }
     }
 
     .rightSide{
-      @include span-columns(6);
-      width: 100%;
-      float: right;
+      @include span-columns(4);
+      height: 100px;
+      background-color: hsla(0, 0%, 96%, 1);
 
       a.avatarLink{
         float: right;
@@ -104,13 +109,15 @@ body{
           font-size: 10pt;
           font-weight: bold;
           }
+
           span.octicon.octicon-plus{
             font-size: 12pt;
-
           }
+
           span.octicon.octicon-inbox{
             font-size: 12pt;
           }
+          
           span.octicon.octicon-gear{
             font-size: 12pt;
           }
