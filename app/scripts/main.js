@@ -1,48 +1,23 @@
 
+repos.forEach( function (item) {
+    var name = item.name;
+    var description = item.description;
+    var updated_at = item.updated_at;
+    var languag = item.language;
+    var stargazers = item.stargazers_count;
+    var forkcount = item.forks_count;
 
-var avatar = '<img src="' + userAPI.avatar_url + '">';
-var userFullName = userAPI.name;
-var userLoginName = userAPI.login;
-var joined = userAPI.created_at;
-var followersList = userAPI.followers_url;
-var starredList = userAPI.starred_url;
-var followingList = userAPI.following_url;
-var numFollowers = userAPI.followers;
-var templateSideBar = $('#userTemplate').text();
-var starredNum = starredAPI.length;
-var renderUserTemplate = _.template(templateSideBar);
-
-var userHTML = renderUserTemplate({starredNumber: starredNum,numFollower: numFollowers,followingURL: followingList,userAvatar: avatar, userName: userFullName, userLogin: userLoginName, joinedDate: joined,followURL: followersList,starredURL: starredList});
-
-$('.sideBar').append(userHTML);
-
-
+    var listDiv = $('<div></div>');
+    $(listDiv).addClass('icons');
+    $(listDiv).append($('<a href="#"><span></span></a>').text(name).prop('id', 'nameSpan'));
+    $(listDiv).append($('<span></span>').text(description).prop('id', 'descriptionSpan'));
+    $(listDiv).append($('<span></span>').text(updated_at).prop('id', 'updated_atSpan'));
+    $(listDiv).append($('<span class="octicon octicon-git-branch"></span>').text(forkscount).prop('id', 'forkscount'));
+    $(listDiv).append($('<span class="octicon octicon-star"></span>').text(stargazers).prop('id', 'stargazers'));
+    $(listDiv).append($('<span></span>').text(language).prop('id', 'language'));
 
 
-_.each(repoAPI, function (p) {
-        console.log(p);
-       
-        var repoLinks =  '<a href="' + p.html_url + '">'+ p.name +'</a><br/>';
-        //var repoDescription = 
-        var repoDescript = p.description;
 
-        var lastUpdate = p.updated_at;
+    $('.reposList').append(listDiv);
 
-    // Grab the template string.
-    var templateString = $('#repoTemplate').text();
-
-    // Turn it into a template function.
-    var renderTemplate = _.template(templateString);
-
-    // Pass in an object. Return value is a string
-    // with the bee stings replaced with object's properties
-    var freshHTML = renderTemplate({repoLink: repoLinks, descript: repoDescript, lastUpdated: lastUpdate});
-
-    // Inject the fresh html into the page.
-    $('.innerMain').append(freshHTML);
- 
 });
-
-    
-
-
