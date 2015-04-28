@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -29,130 +29,150 @@
   </head>
     <body>
 
-        <header>
-            <a href="#"><span class="mega-octicon octicon-mark-github"></span></a>
+        <div class="container">
 
-                    
-                <form  Name="searchbox" Action="" Method="GET">
-                    <Input Type="text" Name="inputbox" Value="Search GitHub"></Input>
-                </form>
+            <header>
 
-                <div class="centertext">
-                    <a><span>Explore</span></a>
-                    <a><span>Features</span></a>
-                    <a><span>Enterprises</span></a>
-                    <a><span>Blog</span></a>
-                </div>
+                <div class="leftSide">
                 
-       </header>
+                    <a href="#" class="octicon">
+
+                    <span class="mega-octicon octicon-mark-github"></span>
+
+
+                    </a>
+
+                        
+                    <form  Name="searchbox" Action="" Method="GET">
+
+                        <Input Type="text" Name="inputbox" placehoilder="Search GitHub"></Input>
+                   
+                    </form>
+
+                    <a class="explore" href="https://github.com/explore">Explore</a>
+                    <a class="gist" href="http://gist.github.com">Gist</a>
+                    <a class="blog" href="https://github.com/ blog">Blog</a>
+                    <a class="help" href="https://help.github.com/">Help</a>
+
+                </div>
+
+                <div class="rightSide">
+
+                    <div class="name">
+
+                        <ul class="list">
+
+                            <a href="#" class="avatar">
+
+                                <img src="https://avatars.githubusercontent.com/u/10402427?v=3" alt="avatar" width="30px">
+                                <span>Jtareb</span>
+
+                                <span class="octicon octicon-plus"></span>
+                                <span class="octicon octicon-triangle-down"></span>
+                                <span class="octicon octicon-gear"></span>
+                                <span class="octicon octicon-sign-out"></span>
+
+                            </a>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+              
+             </header>   
+        
             
     
 
         
-
-
-
-        <div class="maincontent">
-
               <div class="sidebar"> 
+                   <script type="text/template" id="userTemplate">
+                        <div class="userSidebar">
+                            <%=userAvatar%>
+                            <span class="name"><%=userName%></span>
+                            <span class="loginName"><%=userLogin%></span>
+                            <br/>
+                            <span class="dateJoined">Joined on<%=joinedDate%></span>
 
-               <script type="text/template" id="item-user-template">
-                    <div class="userstuff">
-                    <span class="pic">
-                    <%=avatar_url%>
-                    </span>
-                    <span class="username"
-                    <%=name%>
-                    </span>
-                    <div>
+                            <div class="follow"><span><%=numFollowers%></span><a href="<%=followURL%>">Followers</a></div>
+                            <div class="starred"><span><%=starredNumber%></span><a href="<%=starredURL%>">Starred</a></div>
+                            <div class="following"<a href="<%=followingURL%>">Following</a><</div>
+                            <span class="orgList">Organizations</span>
+                        </div>
+
                     </script>
 
-               </div>
-
-                <div class="contentpages">
-                    <div class="indexbox">
-                              <form  Name="searchbox" Action="" Method="GET">
-                                <Input Type="text" Name="inputbox" Value="Find a Repository"></Input>
-                                <Input type="submit" value="Search" class="button"></Input>
+              </div>
 
 
-                              </form>
+
+        <div class="mainsection">
+
+            <div class="tabs">
+
+                <ul>
+                    <li>Contributions</li>
+                    <li>Repositories</li>
+                    <li>Public activity</li>
+                </ul>
+
+                <form action="https://github.com/sttings/profile">
+                    <input class="editProfile" type="submit" placeholder="Edit profile">
+                </form>
+            </div>
 
 
+            <div class="searchBar">
+
+                <form class="searchRepo">
+                    <input type="text" id="input_area" placeholder="Search Github">
+                    <input class="button" type="submit" value="Search">
+                </form>
+
+                <ul class="repFilter">
+                    <li>All</li>
+                    <li>Public</li>
+                    <li>Private</li>
+                    <li>Sources</li>
+                    <li>Forks</li>
+                    <li>Mirrors</li>
+                </ul>
+
+                <form action="https://github.com/new">
+                    <input class="create" type="submit" value="New">
+                </form>
+
+            </div>
+
+
+            <div class="mainContent">
+
+                <script type="text/template" id="repoTemplate">
+
+                    <div class="item">
+                        <span class="nameLink"<%= repoLink %></span>
+                        <div class="descriptionColor"><%= descript %></div>
+                        <div class="lastUp"><time><%= lastUpdated %></time></div>
+                        <div class="borderLine"></div>
                     </div>
-                    
-                    <div class="contentbox">
 
-                        <script type="text/template" id="item-user-template">
-        
-                            <div>
-                                <span class="classwork">
-                                <%=name%>
-                                </span>
-                            </div>
-                            <div>
-                            <span class="desc">
-                            <%= description%>
-                            </span>    
-                            </div>
-                            
-                            
-                            
+                </script>
 
-                     
-                        </script>
-
-                    </div>
-                    
-                </div>
-
+            </div>
         </div>
-                
-                
 
-                
-                                                      
-                            
-                    
+    </div>
+                        
+
             
-                            
-    
-    
-
-
-
-        <div class="footer"></div>
-
-
-
-
-
-
-
-
-
-
-
-
    
-
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="scripts/starredAPI.js"></script>
+    <script src="scripts/repoAPI.js"></script>
+    <script src="scripts/userAPI.js"></script>
+    <script src="scripts/main.js"></script>
 
-
-    
-    <!-- endbower -->
-    <!-- endbuild -->
-
-        <!-- build:js scripts/main.js -->
-        
-        <script src="scripts/repoapi.js"></script>
-        <script src="scripts/user.js"></script>
-        <script src="scripts/starred.js"></script>
-        <script src="scripts/org.js"></script>
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
-    </body>
+</body>
 </html>

@@ -2,119 +2,236 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+
 // Custom Styles
-.body {
-  width: 1426px;
-
-  
-
+body {
+  background: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
 }
 
 
-header {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 980px;
-  margin: 0 auto;
+.container{
+  @include outer-container;
+  background-color:white;
+}
+
+header{
+  @include span-columns(12);
+  height: 50px;
+  background-color:HSLA(0, 0%, 96%, 1);
+}
+
+.leftSide{
+  @include span-columns(8);
   height: 100px;
-  background-color: hsla(232, 1%, 74%, 0.82);
+  background-color:HSLA(0, 0%, 96%, 1);
+  padding-top: 12px;
 
-  span {
-    float: left;
-    color: black;
-    margin-top: 25px;
-}
-
-  input {
-    position: relative;
-    float: left;
-    width: 370px;
-    margin-left: 20px;
-    top: 25px;
+  img{
+    width:28px;
+    float:left;
   }
 
-    span {
-      float: left;
-      margin-left: 20px;
-      top: 50px;
-      font-size: 85%;
-      font-weight: bold;
+  input{
+    width:350px;
+    padding-top: 6px;
+  }
+
+  .searchText{
+    float:left;
+    margin-left: 5px;
+
+  }
+
+  .explore{
+    float:left;
+    padding-left: 10px;
+    text-decoration: none;
+    color:HSLA(0, 0%, 20%, 1);
+    font-size: 14px;
+    padding-top: 6px;
+  }
+
+  .gist{
+    float: left;
+    padding-left: 10px;
+    text-decoration: none;
+    color:HSLA(0, 0%, 20%, 1);
+    font-size: 14px;
+    padding-top: 6px;
+
+  }
+
+  .blog{
+    float: left;
+    padding-left: 10px;
+    text-decoration: none;
+    color:HSLA(0, 0%, 20%, 1);
+    font-size: 14px;
+    padding-top: 6px;
+  }
+  .help{
+    float: left;
+    padding-left: 10px;
+    text-decoration: none;
+    color:HSLA(0, 0%, 20%, 1);
+    font-size: 14px;
+    padding-top: 6px; 
+  }
+
+}
+
+.rightSide{
+  @include span-columns(4);
+  height: 100px;
+  background-color:HSLA(0, 0%, 96%, 1);
+}
+
+.sideBar{
+  @include span-columns(3);
+  height: 800px;
+  background-color:white;
+  padding-top: 20px;
+  img{
+    width:230px;
+    border-radius: 6px;
+  }
+}
+
+.dateJoined{
+  font-size: 13px;
+  border-top:1px solid lightgrey;
+  line-height: 85px;
+  padding-top: 18px;
+  padding-right: 23px;
+}
+.dateJoined img{
+  width: 14px;
+
+}
+
+.name{
+  display: block;
+overflow: hidden;
+width: 100%;
+font-size: 26px;
+line-height: 30px;
+text-overflow: ellipsis;
+font-weight:800;
+}
+
+.loginName{
+  font-size: 20px;
+  color:HSLA(0, 0%, 40%, 1);
+}
+
+
+.mainSection{
+  @include span-columns(9);
+  background-color:white;
+}
+.searchBar{
+  @include span-columns(12);
+  height: 60px;
+  border-top:1px solid lightgrey;
+  border-bottom:1px solid lightgrey;
+  text-align: middle;
+}
+
+
+.tabBar{
+  @include span-columns(12);
+  height: 55px;
+  background-color:white;
+}
+
+.tabBar ul{
+  float:left;
+}
+
+.tabBar ul li{
+  float: left;
+  list-style: none;
+  padding-left:30px;
+}
+
+.editProfile{
+  float: left;
+  margin-left: 175px;
+  margin-top: 9px;
+  height: 36px;
+}
+
+.searchRepo{
+  float:left;
+  padding-top: 17px;
+}
+
+.repoFilter li:first-child{
+ padding-left: 38px;
+}
+
+.repoFilter li{
+  float:left;
+  list-style:none;
+  padding-left:15px;
+  padding-top: 4px;
+}
+
+.create{
+  margin-left: 17px;
+  line-height: 33px;
+  margin-top: -6px;
+  background-color: HSLA(105, 57%, 57%, 1);
+  color: white;
+  border-color: HSLA(104, 44%, 46%, 1);
+}
+
+
+
+.item{
+  padding-top:30px;
+}
+
+.innerMain{
+  @include span-columns(12);
+  background-color:white;
+
+  .nameLink a{
+    color:HSLA(210, 53%, 51%, 1);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
     }
 
-    
-      
-
-}
-
-
-.maincontent {
-  width: 980px;
-  @include outer-container;
-}
-
-.sidebar {
-  @include span-columns(3);
-  height: 300px;
-
-
-}
-
-.contentpages {
-  @include span-columns(9);
-}
-
-
-.indexbox {
-  height: 100px;
-  border-top: 1px;
-  border-bottom: 1px;
-  border-bottom: solid;
-  border-color: hsla(251, 3%, 79%, 1);
-  border-width: 25%;
-
-
-
-}
-
-
-
-input {
-  min-height: 34px;
-  padding: 7px 8px;
-  font-size: 13px;
-  color: #333;
-  vertical-align: middle;
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-position: right center;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  outline: none;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
-    
+  .descriptColor{
+    color:black;
+    font-size: 15px;
+    padding-top: 10px;
   }
-input {
 
+  .lastUp{
+    padding-top:10px;
+  }
+
+  .borderLine{
+    width:100%;
+    height: 1px;
+    background-color:lightgrey;
+  }
+
+  .nameLink:hover{
+    text-decoration: underline;
+  }
+
+
+footer{
+  @include span-columns(12);
+  height: 100px;
+  background-color:purple;
 }
 
-
-
-.classwork {
-  margin: 45px;
-  display: block;
-  color: hsla(209, 57%, 61%, 1);
-  font-size: 135%;
-   
-  
-}
-
-.desc {
-  margin: 45px;
-  display: block;
-  font-size: 80%;
-  border-bottom: solid;
-   border-color: hsla(251, 3%, 79%, 1);
-}
 
 
 
