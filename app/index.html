@@ -4,198 +4,159 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-
-    <title>Etsy Project</title>
-
+    <title>GitHub Clone</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/octicons/octicons/octicons.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
 
+    <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
 
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
   </head>
   <body>
     <header>
+     
       <nav>
-        <div class="section-left">
-          <div class="logo">
-            <a href="#"><img src="https://www.etsy.com/assets/dist/images/etsylogo.20150106184300.png"></a>
-          </div>
-          <div class="search">
-            <form>
-              <input type="text" class="input-search" placeholder="Search for items or shops">
-              <button class="search-button">Search</button>
-              <div class="browse-button">Browse
-                <i class="fa fa-caret-down"></i>
-              </div>
-            </form>
-          </div>
+        <div class="left-header"></div>
+          <ul class="explore-list">
+            <li><a href="#" class="logo"><span class="octicon octicon-mark-github"></span></a></li>
+            <li><form action="search"><input class="search-bar" type="text" placeholder="Search GitHub"></form></li>
+            <li><a class="nav-txt" href="#">Explore</a></li>
+            <li><a class="nav-txt" href="#">Gist</a></li>
+            <li><a class="nav-txt" href="#">Blog</a></li>
+            <li><a class="nav-txt" href="#">Help</a></li>
+          </ul>
         </div>
-        <div class="section-right">
-          <ul>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Register</a></li>
-            <li class="sign-in">Sign In</li>
-            <li class="shopping-cart">
-              <div><i class="fa fa-shopping-cart"></i>Cart</div>
-            </li>
+        <div class="right-header">
+          <ul class="right-side">
+            <li><a href="<% html_url %>"><img src="<% avatar_url %>" alt="avatar"><span class="user-name"><% login %></span></a></li>
+            <li><a href="#"><span class="octicon octicon-plus menu-down"></span></a></li>
+            <li><a href="https://github.com/notifications"><span class="octicon octicon-inbox"></span></a></li>
+            <li><a href="https://github.com/settings/profile"><span class="octicon octicon-gear"></span></a></li>
+            <li><a href="https://github.com"><span class="octicon octicon-sign-out"></span></a></li>
           </ul>
         </div>
       </nav>
-    </header>
-
-
-      <div class="mainContent">
-        <aside>
-          <h3>Show results for:</h3>
-          <div class="sidebar">
-
-            <h4>Item Type</h4>
-            <ul class="item-type">
-              <li class="radio"><input type="radio" name="itemType" id="allItems"><label for="allItems">All Items</label></li>
-              <li class="radio"><input type="radio" name="itemType" id="handmade"><label for="handmade">Handmade</label></li>
-              <li class="radio"><input type="radio" name="itemType" id="vintage"><label for="vintage">Vintage</label></li>
-              <li class="radio"><input type="radio" name="itemType" id="craftSupplies"><label for="craftSupplies">Craft Supplies</label></li>
-            </ul>
-
-            <h4>Categories</h4>
-            <ul class="categories">
-              <li><a href="#">Handmade</a></li>
-              <li><a href="#">Paper Goods</a></li>
-              <li><a href="#">Clothing</a></li>
-              <li><a href="#">Holidays</a></li>
-              <li><a href="#">Everything Else</a></li>
-              <li><a href="#">Art</a></li>
-              <li><a href="#">Geekery</a></li>
-              <li><a href="#">Accessories</a></li>
-            </ul>
-
-            <div class="price-filter">
-              <h4>Price Filter</h4>
-              <form action="#">
-                <input type="text" placeholder="min">to
-                <input type="text" placeholder="max">
-                <button type="submit"><i class="fa fa-caret-right"></i></button>
-              </form>
-            </div>
-
-
-            <h4>Filter by Color</h4>
-            <ul class="color-filter">
-              <a href="#"><li class="red"></li></a>
-              <a href="#"><li class="orange"></li></a>
-              <a href="#"><li class="yellow"></li></a>
-              <a href="#"><li class="green"></li></a>
-              <a href="#"><li class="cyan"></li></a>
-              <a href="#"><li class="purple"></li></a>
-              <a href="#"><li class="black"></li></a>
-              <a href="#"><li class="white"></li></a>
-            </ul>
-
-
-            <h4>Ordering Options</h4>
-            <ul>
-              <li><input type="checkbox">Accepts Etsy Gift Cards</li>
-              <li><input type="checkbox">Customizable</li>
-            </ul>
-
-            <h4>Shop Location</h4>
-            <ul>
-              <li class="radio"><input type="radio" name="location">Anywhere</li>
-              <li class="radio"><input type="radio" name="location">United States</li>
-            </ul>
-            <div class="shop-location"><a href="#">Choose a custom location</a></div>
-
-            <div class="ship-to">
-              <h4>Ships To</h4>
-              <div><a href="#">Clear</a></div>
-            </div>
-            <select class="ship-to">
-              <option value="here">Here</option>
-              <option value="there">There</option>
-            </select>
-
-          </div>
-
-        </aside>
-
-      
-        <ul class="itemGrid">
+    </header> 
+    <div class="container">
+      <aside>
+        <div class="account">
+          <a href="#"><img src="<% user.avatar_url %>" alt="avatar"></a>
+          <h1 class="full-name"><% user.name %></h1>
+          <h4 class="account-name"><% user.login %></h4>
+        </div>
+        <ul class="contact">
+          <li><span class="octicon octicon-mail"></span><a href="<% user.email %>"></a></li>
+          <li><span class="octicon octicon-clock"></span>Joined on <% user.created_at %></li>
         </ul>
-      </div>
-
-      <footer>
-        <div class="upper-footer">
-
-          <div>
-            <h4>Turn Your Passion Into a Business</h4>
-            <div class="button-primary"><a href="#">Open a Shop</a></div>
-            <h4 class="embedded-heading">Sell on Etsy</h4>
-            <a href="#"><p>Seller</p></a>
-            <a href="#"><p>Etsy Credit Card Reader</p></a>
-          </div>
-
-          <div>
-            <h4>Join the Community</h4>
-            <a href="#"><p>Teams</p></a>
-            <a href="#"><p>Forums</p></a>
-            <a href="#"><p>Upcoming Events</p></a>
-          </div>
-
-          <div>
-            <h4>Discover the Shop</h4>
-            <a href="#"><p>Gift Cards</p></a>
-            <a href="#"><p>Blog</p></a>
-            <a href="#"><p>Tastemakers</p></a>
-            <a href="#"><p>Mobile Apps</p></a>
-            <a href="#"><p>Gift Registries</p></a>
-            <a href="#"><p>Wholesale</p></a>
-          </div>
-
-          <div>
-            <h4>Get to Know Us</h4>
-            <a href="#"><p>About</p></a>
-            <a href="#"><p>Careers</p></a>
-            <a href="#"><p>Press</p></a>
-            <a href="#"><p>Developers</p></a>
-          </div>
-
-          <div>
-            <h4>Follow Etsy</h4>
-            <div><a href="#"><i class="fa fa-facebook-official"></i><span>Facebook</span></a></div>
-            <div><a href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a></div>
-            <div><a href="#"><i class="fa fa-pinterest-p"></i><span> Pinterest</span></a></div>
-            <div><a href="#"><i class="fa fa-instagram"></i><span>Instagram</span></a></div>
-          </div>
-
+        <ul class="sidebar-stats">
+         <li><a href="#"><strong><% user.followers %></strong><small>Followers</small></a></li>
+         <li><a href="#"><strong></strong>0<small>Starred</small></a></li>
+         <li><a href="#"><strong><% user.following %></strong><small>Following</small></a></li>
+        </ul>
+        <div class="organizations">
+          <h3>Organizations</h3>
+          <ul id="orgs">
+            <li><img src="<% avatar_url %>" alt="org icon"></li>
+          </ul>
         </div>
-
-        <div class="lower-footer">
-
-          <div class="locale">
-            <div><i class="fa fa-globe"></i><span>United States</span></div>
-            <div>English(US)</div>
-            <div>$ USD</div>
-            <div><a href="#">Help</a></div>
+      </aside>
+      <article class="content">
+        <nav class="navtabs-left">
+          <ul>
+            <li><span class="octicon octicon-diff-added"></span>Contributions</li>
+            <li class="clicked"><span class="octicon octicon-repo"></span>Repositories</li>
+            <li><span class="octicon octicon-rss"></span>Public activity</li>
+          </ul>
+          <div class="navtabs-right">
+            <div class="edit-button"><span class="octicon octicon-pencil"></span>Edit profile</div>
           </div>
-
-          <nav>
-            <span>&copy; 2015 Etsy, Inc.</span>
-            <span><a href="#">Terms</a></span>
-            <span><a href="#">Privacy</a></span>
-            <span><a href="#">Copyright</a></span>
-            <span><a href="#">Interest-based Ads</a></span>
-          </nav>
+        </nav>
+        <div class="tab-search-bar">
+          <form action="search">
+            <input type="text" class="repository-search" placeholder="find a repository...">
+            <input type="submit" class="searchy-button" title="Search">
+          </form>
+          <div class="make-new-button"><span class="octicon octicon-repo"></span>New</div>
+          <ul>
+            <li><a href="#">Mirrors</a></li>
+            <li><a href="#">Forks</a></li>
+            <li><a href="#">Sources</a></li>
+            <li><a href="#">Private</a></li>
+            <li><a href="#">Public</a></li>
+            <li class="all-bold"><a href="#">All</a></li>
+          </ul>
         </div>
-
-      </footer>
-
-
-
+        <ul class="list-repository">
+          <li>
+            <div class="repo-info-forked">
+              <h3><a href="#"><% name %></a></h3>
+              <div class="forked"><span class="octicon octicon-repo-forked"></span><a href="#"><% .full_name %></a></div>
+              <p><% description %></p>
+              <small>Updated <% updated_at %></small>
+            </div>
+            <div class="repo-stats"><span><% .language %></span>
+              <span class="octicon octicon-star"></span><span>0</span>
+              <span class="octicon octicon-git-branch"></span><span class="language"><% forks_count %></span>
+            </div>
+          </li>
+          <li>
+            <div class="repo-info-sourced">
+              <h3><a href="#"></a><% .name %></h3>
+              <p><% description %></p>
+              <small>Updated <% updated_at %></small>
+            </div>
+            <div class="repo-stats"><span><% .language %></span>
+              <span class="octicon octicon-star"></span><span>0</span>
+              <span class="octicon octicon-git-branch"></span><span class="language"><% .sources_count %></span>
+            </div>
+          </li>
+        </ul>
+      </article>
     </div>
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="scripts/etsydata.js"></script>
-    <script src="scripts/main.js"></script>
+    <footer>
+      <nav>
+        <ul class="footer-left">
+          <li>&copy;2015 GitHub, Inc.</li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="footer-right">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Training</a></li>
+          <li><a href="#">API</a></li>
+          <li><a href="#">Status</a></li>
+        </ul>
+        <div class="footer-icon"><a href="#"><span class="mega-octicon octicon-mark-github"></span></a></div>
+      </nav>
+    </footer>
 
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/repo.js"></script>
+        <script src="scripts/user.js"></script>
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
 </body>
 </html>
