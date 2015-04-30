@@ -1,145 +1,201 @@
 <!doctype html>
-<html>
+<html class="no-js">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>gitrepo</title>
+
+    <title>Etsy Project</title>
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
 
-    <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
 
   </head>
- 
   <body>
-
- 
-
-    <div class="container">
-
-      <header>
-        <div class="leftHeader">
-          <a href="https://github.com/"><img src="../images/GitHub-Mark-64px.png"></a>
-          <form class="searchText">  
-            <input type="text" id="input_area" placeholder="Search GitHub">
-          </form>
-          <a class="explore" href="tps://github.com/explore">Explore<a>
-          <a class="gist" href="https://gist.github.com/">Gist<a>
-          <a class="blog" href="https://github.com/blog">Blog<a>
-          <a class="help" href="https://help.github.com/">Help</a>
-
+    <header>
+      <nav>
+        <div class="section-left">
+          <div class="logo">
+            <a href="#"><img src="https://www.etsy.com/assets/dist/images/etsylogo.20150106184300.png"></a>
+          </div>
+          <div class="search">
+            <form>
+              <input type="text" class="input-search" placeholder="Search for items or shops">
+              <button class="search-button">Search</button>
+              <div class="browse-button">Browse
+                <i class="fa fa-caret-down"></i>
+              </div>
+            </form>
+          </div>
         </div>
-
-        <div class="rightHeader"></div>
- </header>
-
-    <div class="sideBar">
-        <script type="text/template" id="userTemplate">
-        <div class="userSidebar">
-            <%=userAvatar%> 
-            <span class="nameFull"><%=userName%></span>
-            <span class="userLoginName"><%=userLogin%></span><br/>
-            <span class="joinedOnDate"><img src="../images/GitHub-Mark-32px">Joined on <%=joinedDate%></span>
-
-            <div class="follow"><span><%=numFollower%></span><a href="<%=followURL%>">Follower</a></div>
-            <div class="starred"><span><%=starredNumber%></span><a href="<%=starredURL%>">Starred</a></div>
-            <div class="following"><a href="<%=followingURL%>">Following</a></div>
-            <span class="orgListTitle">Organizations</span>
+        <div class="section-right">
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Register</a></li>
+            <li class="sign-in">Sign In</li>
+            <li class="shopping-cart">
+              <div><i class="fa fa-shopping-cart"></i>Cart</div>
+            </li>
+          </ul>
         </div>
-      </script>   <!--end of template attempt-->
-    </div>
+      </nav>
+    </header>
 
 
+      <div class="mainContent">
+        <aside>
+          <h3>Show results for:</h3>
+          <div class="sidebar">
 
-    <div class="mainSection">
+            <h4>Item Type</h4>
+            <ul class="item-type">
+              <li class="radio"><input type="radio" name="itemType" id="allItems"><label for="allItems">All Items</label></li>
+              <li class="radio"><input type="radio" name="itemType" id="handmade"><label for="handmade">Handmade</label></li>
+              <li class="radio"><input type="radio" name="itemType" id="vintage"><label for="vintage">Vintage</label></li>
+              <li class="radio"><input type="radio" name="itemType" id="craftSupplies"><label for="craftSupplies">Craft Supplies</label></li>
+            </ul>
 
-    <div class="tabBar">
-      <ul>
-        <li>Contributions</li>
-        <li>Repositories</li>
-        <li>Public activity</li>
-      </ul>
-      <form action="https://github.com/settings/profile">
-         <input class="editProfile" type="submit" value="Edit profile">
-      </form>
-    </div> 
+            <h4>Categories</h4>
+            <ul class="categories">
+              <li><a href="#">Handmade</a></li>
+              <li><a href="#">Paper Goods</a></li>
+              <li><a href="#">Clothing</a></li>
+              <li><a href="#">Holidays</a></li>
+              <li><a href="#">Everything Else</a></li>
+              <li><a href="#">Art</a></li>
+              <li><a href="#">Geekery</a></li>
+              <li><a href="#">Accessories</a></li>
+            </ul>
+
+            <div class="price-filter">
+              <h4>Price Filter</h4>
+              <form action="#">
+                <input type="text" placeholder="min">to
+                <input type="text" placeholder="max">
+                <button type="submit"><i class="fa fa-caret-right"></i></button>
+              </form>
+            </div>
 
 
-      <div class="searchBar">
+            <h4>Filter by Color</h4>
+            <ul class="color-filter">
+              <a href="#"><li class="red"></li></a>
+              <a href="#"><li class="orange"></li></a>
+              <a href="#"><li class="yellow"></li></a>
+              <a href="#"><li class="green"></li></a>
+              <a href="#"><li class="cyan"></li></a>
+              <a href="#"><li class="purple"></li></a>
+              <a href="#"><li class="black"></li></a>
+              <a href="#"><li class="white"></li></a>
+            </ul>
 
-        <form class="searchRepo">  
-          <input type="text" id="input_area" placeholder="Search GitHub">
-          <input class="button" type="submit" value="Search">
-        </form>
 
-        <ul class="repoFilter">
-          <li>All</li>
-          <li>Public</li>
-          <li>Private</li>
-          <li>Sources</li>
-          <li>Forks</li>
-          <li>Mirrors</li>
+            <h4>Ordering Options</h4>
+            <ul>
+              <li><input type="checkbox">Accepts Etsy Gift Cards</li>
+              <li><input type="checkbox">Customizable</li>
+            </ul>
+
+            <h4>Shop Location</h4>
+            <ul>
+              <li class="radio"><input type="radio" name="location">Anywhere</li>
+              <li class="radio"><input type="radio" name="location">United States</li>
+            </ul>
+            <div class="shop-location"><a href="#">Choose a custom location</a></div>
+
+            <div class="ship-to">
+              <h4>Ships To</h4>
+              <div><a href="#">Clear</a></div>
+            </div>
+            <select class="ship-to">
+              <option value="here">Here</option>
+              <option value="there">There</option>
+            </select>
+
+          </div>
+
+        </aside>
+
+      
+        <ul class="itemGrid">
         </ul>
-        <form  action="https://github.com/new">
-         <input class="create" type="submit" value="New">
-         </form>
-
-      </div><!--tabBar close brace-->
-
-      <div class="innerMain">
-<!--beggining of template att-->
-
-      <script type="text/template" id="repoTemplate">
-        <div class="item">
-            <span class="nameLink"><%= repoLink %></span>
-            <div class="descriptColor"><%= descript %></div>
-            <div class="lastUp"><time><%= lastUpdated %></time></div>
-            <div class="borderLine"></div>
-        </div>
-
-    
-      </script>   <!--end of template attempt-->
-
-
- 
-
-
-
-
-
-
       </div>
 
-      </div><!--main section close brace-->
-      
+      <footer>
+        <div class="upper-footer">
 
-  </div><!--container close brace-->
+          <div>
+            <h4>Turn Your Passion Into a Business</h4>
+            <div class="button-primary"><a href="#">Open a Shop</a></div>
+            <h4 class="embedded-heading">Sell on Etsy</h4>
+            <a href="#"><p>Seller</p></a>
+            <a href="#"><p>Etsy Credit Card Reader</p></a>
+          </div>
 
-<footer>This is the footer</footer>
+          <div>
+            <h4>Join the Community</h4>
+            <a href="#"><p>Teams</p></a>
+            <a href="#"><p>Forums</p></a>
+            <a href="#"><p>Upcoming Events</p></a>
+          </div>
+
+          <div>
+            <h4>Discover the Shop</h4>
+            <a href="#"><p>Gift Cards</p></a>
+            <a href="#"><p>Blog</p></a>
+            <a href="#"><p>Tastemakers</p></a>
+            <a href="#"><p>Mobile Apps</p></a>
+            <a href="#"><p>Gift Registries</p></a>
+            <a href="#"><p>Wholesale</p></a>
+          </div>
+
+          <div>
+            <h4>Get to Know Us</h4>
+            <a href="#"><p>About</p></a>
+            <a href="#"><p>Careers</p></a>
+            <a href="#"><p>Press</p></a>
+            <a href="#"><p>Developers</p></a>
+          </div>
+
+          <div>
+            <h4>Follow Etsy</h4>
+            <div><a href="#"><i class="fa fa-facebook-official"></i><span>Facebook</span></a></div>
+            <div><a href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a></div>
+            <div><a href="#"><i class="fa fa-pinterest-p"></i><span> Pinterest</span></a></div>
+            <div><a href="#"><i class="fa fa-instagram"></i><span>Instagram</span></a></div>
+          </div>
+
+        </div>
+
+        <div class="lower-footer">
+
+          <div class="locale">
+            <div><i class="fa fa-globe"></i><span>United States</span></div>
+            <div>English(US)</div>
+            <div>$ USD</div>
+            <div><a href="#">Help</a></div>
+          </div>
+
+          <nav>
+            <span>&copy; 2015 Etsy, Inc.</span>
+            <span><a href="#">Terms</a></span>
+            <span><a href="#">Privacy</a></span>
+            <span><a href="#">Copyright</a></span>
+            <span><a href="#">Interest-based Ads</a></span>
+          </nav>
+        </div>
+
+      </footer>
 
 
 
-   
+    </div>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/etsydata.js"></script>
+    <script src="scripts/main.js"></script>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/underscore/underscore.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-        <script src="scripts/starredAPI.js"></script>
-        <script src="scripts/repoAPI.js"></script>
-        <script src="scripts/userAPI.js"></script>
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
 </body>
 </html>
