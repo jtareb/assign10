@@ -207,40 +207,42 @@ header {
         }
       }
     }
-    div {
-      float: right;
-      ul.right-side {
-        li {
-          margin: 0 5px;
-          a {
-            color: #333;
-            &:hover {
-              color: #4183c4;
-            }
+     .righthead{
+      @include span-columns(6);
+      width: 100%;
+      float: left;
+
+      a.avatarLink{
+        float: right;
+        position: relative;
+        right: 225px;
+        bottom: 59px;
+        text-decoration: none;
+
+        img{
+          border-radius: 5px;
+        }
+        span{
+          position: relative;
+          bottom: 7px;
+          color: black;
+          margin: 4px;
+          font-size: 10pt;
+          font-weight: bold;
           }
-          img {
-            width: 20px;
-            border-radius: 3px;
-            vertical-align: middle;
+          span.octicon.octicon-plus{
+            font-size: 12pt;
+
           }
-          .user-name {
-            margin: 0 5px;
+          span.octicon.octicon-inbox{
+            font-size: 12pt;
           }
-          a span {
-            font-size: 18px;
-            color: #333;
-            &:hover {
-              color: #4183c4;
-            }
-          }
-          .octicon-plus:after {
-            margin-left: 2px;
-          }
-          .octicon-inbox {
-            font-size: 20px;
+          span.octicon.octicon-gear{
+            font-size: 12pt;
           }
         }
       }
-    }
+
+  
   }
 }
