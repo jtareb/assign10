@@ -4,91 +4,90 @@
 
 // Custom Styles
 
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+}
+
 
 body{
-  background: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
-}
-
-.container {
-  @include outer-container;
-  background-color: white;
-}
-
-
+ 
   header{
-    @include span-columns(12);
+    @include outer-container;
+    max-width: 100%;
+    background-color: #F5F5F5;
     height: 50px;
-    background-color: hsla(0, 0%, 96%, 1.0);
 
-    .leftSide{
-      @include span-columns(8);
-      height: 100px;
-      background-color: hsla(0, 0%, 96%, 1.0);
-      padding-top: 12px;
-
-      span{
+      .leftSide{
+        @include span-columns(6);
+        width: 100%
         float: left;
-        font-size: 26px;
-        position: absolute;
-        left: 227px;
-        top: 12px;
-      }
 
-      input{
-        width: 350px;
-        padding-top: 6px;
-      }
+          span{
+            float: left;
+            font-size: 26px;
+            position: absolute;
+            left: 227px;
+            top: 12px;
+            color: #333333;
+          }
 
-      .search {
-        float: left;
-        margin-left: 5px;
-      }
+          input{
+            position: relative;
+            left: 270px;
+            width: 350px;
+            height: 30px;
+            top: -11px;
+            border-radius: 6px;
+            
+          }
 
-      .explore{
-        float: left;
-        padding-left: 10px;
-        text-decoration: none;
-        color: hsla(0, 0%, 20%, 1);
-        font-size: 14px;
-        padding-top: 6px;
-      }
+          .explore{
+            float: left;
+            padding-left: 10px;
+            text-decoration: none;
+            color: hsla(0, 0%, 20%, 1);
+            font-size: 14px;
+            padding-top: 6px;
+          }
 
-      .gist{
-        float: left;
-        padding-left: 10px;
-        text-decoration: none;
-        color: hsla(0, 0%, 20%, 1);
-        font-size: 14px;
-        padding-top:: 6px;
+          .gist{
+            float: left;
+            padding-left: 10px;
+            text-decoration: none;
+            color: hsla(0, 0%, 20%, 1);
+            font-size: 14px;
+            padding-top:: 6px;
 
-      }
+          }
 
-      .blog{
-        float: left;
-        padding-left: 10px;
-        text-decoration: none;
-        color: hsla(0, 0%, 20%, 1);
-        font-size: 14px;
-        padding-top:: 6px;
-        
-      }
+          .blog{
+            float: left;
+            padding-left: 10px;
+            text-decoration: none;
+            color: hsla(0, 0%, 20%, 1);
+            font-size: 14px;
+            padding-top:: 6px;
+            
+          }
 
-      .help{
-        float: left;
-        padding-left: 10px;
-        text-decoration: none;
-        color: hsla(0, 0%, 20%, 1);
-        font-size: 14px;
-        padding-top:: 6px;
+          .help{
+            float: left;
+            padding-left: 10px;
+            text-decoration: none;
+            color: hsla(0, 0%, 20%, 1);
+            font-size: 14px;
+            padding-top:: 6px;
+          }
       }
-    }
 
     .rightSide{
-      @include span-columns(4);
-      height: 100px;
-      background-color: hsla(0, 0%, 96%, 1);
+      @include span-columns(6);
+      width: 100%;
+      float: left;
+      
 
       a.avatarLink{
         float: right;
@@ -97,17 +96,17 @@ body{
         bottom: 59px;
         text-decoration: none;
 
-        img{
-          border-radius: 5px;
-        }
-        span{
-          position: relative;
-          bottom: 7px;
-          color: black;
-          margin: 4px;
-          font-size: 10pt;
-          font-weight: bold;
+          img{
+            border-radius: 5px;
           }
+          span{
+            position: relative;
+            bottom: 7px;
+            color: black;
+            margin: 4px;
+            font-size: 10pt;
+            font-weight: bold;
+            }
 
           span.octicon.octicon-plus{
             font-size: 12pt;
