@@ -3,30 +3,23 @@
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-
+}
 body{
-  background: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
-}
-
-.container {
-  @include outer-container;
-  background-color: white;
-}
-
-
   header{
-    @include span-columns(12);
+    @include outer-container;
+    max-width: 100%;
+    background-color: #F5F5F5;
     height: 50px;
-    background-color: hsla(0, 0%, 96%, 1.0);
 
     .leftSide{
-      @include span-columns(8);
-      height: 100px;
-      background-color: hsla(0, 0%, 96%, 1.0);
-      padding-top: 12px;
+      @include span-columns(6);
+      width: 100%;
+      float: left;
 
       span{
         float: left;
@@ -34,61 +27,63 @@ body{
         position: absolute;
         left: 227px;
         top: 12px;
+        color: #333333;
       }
 
       input{
+        position: relative;
+        left: 270px;
         width: 350px;
-        padding-top: 6px;
-      }
-
-      .search {
-        float: left;
-        margin-left: 5px;
+        height: 30px;
+        top: -11px;
+        border-radius: 6px;
       }
 
       .explore{
-        float: left;
-        padding-left: 10px;
+        position: relative;
+        left: 635px;
+        top:-36px;
         text-decoration: none;
-        color: hsla(0, 0%, 20%, 1);
-        font-size: 14px;
-        padding-top: 6px;
+        color: black;
+        font-weight: bold;
+        font-size: 10pt;
       }
 
       .gist{
-        float: left;
-        padding-left: 10px;
+        position: relative;
+        left: 645px;
+        top:-36px;
         text-decoration: none;
-        color: hsla(0, 0%, 20%, 1);
-        font-size: 14px;
-        padding-top:: 6px;
-
+        color: black;
+        font-weight: bold;
+        font-size: 10pt;
       }
 
       .blog{
-        float: left;
-        padding-left: 10px;
+        position: relative;
+        left: 655px;
+        top:-36px;
         text-decoration: none;
-        color: hsla(0, 0%, 20%, 1);
-        font-size: 14px;
-        padding-top:: 6px;
-        
+        color: black;
+        font-weight: bold;
+        font-size: 10pt;
       }
 
       .help{
-        float: left;
-        padding-left: 10px;
+        position: relative;
+        left: 665px;
+        top:-36px;
         text-decoration: none;
-        color: hsla(0, 0%, 20%, 1);
-        font-size: 14px;
-        padding-top:: 6px;
+        color: black;
+        font-weight: bold;
+        font-size: 10pt;
       }
     }
 
-    .rightSide{
-      @include span-columns(4);
-      height: 100px;
-      background-color: hsla(0, 0%, 96%, 1);
+    .rightside{
+      @include span-columns(6);
+      width: 100%;
+      float: left;
 
       a.avatarLink{
         float: right;
@@ -108,15 +103,13 @@ body{
           font-size: 10pt;
           font-weight: bold;
           }
-
           span.octicon.octicon-plus{
             font-size: 12pt;
-          }
 
+          }
           span.octicon.octicon-inbox{
             font-size: 12pt;
           }
-          
           span.octicon.octicon-gear{
             font-size: 12pt;
           }
@@ -131,11 +124,9 @@ body{
     height: 1490px;
     margin-left: 200px;
     float: left;
-
     .Name{
       border-bottom: 1px solid #CCCCCC;
       padding-bottom: 10px;
-
       img{
         border-radius: 5px;
       }
@@ -148,7 +139,6 @@ body{
         color: #666666;
       }
     }
-
     .dateJoined{
       padding-top: 13px;
       padding-bottom: 13px;
@@ -165,8 +155,7 @@ body{
     .followBar{
       height: 75px;
       border-bottom: 1px solid #CCCCCC;
-
-      .follow{
+      .follower{
         float: left;
         width: 60px;
         height: 60px;
@@ -229,7 +218,7 @@ body{
     height: 1000px;
     width: 975px;
 
-    .mainHeader {
+    .mainHead {
       width: auto;
       height: 37px;
       border-bottom: 1px solid #CCCCCC;
