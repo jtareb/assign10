@@ -1,16 +1,15 @@
 <!doctype html>
-<html class="no-js">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>GitHub Clone</title>
+    <title>gitrepo</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
-    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="../bower_components/octicons/octicons/octicons.css" />
     <!-- endbower -->
     <!-- endbuild -->
@@ -19,144 +18,38 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="../bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
   </head>
   <body>
-    <header>
-     
-      <nav>
-        <div class="left-header"></div>
-          <ul class="explore-list">
-            <li><a href="#" class="logo"><span class="octicon octicon-mark-github"></span></a></li>
-            <li><form action="search"><input class="search-bar" type="text" placeholder="Search GitHub"></form></li>
-            <li><a class="nav-txt" href="#">Explore</a></li>
-            <li><a class="nav-txt" href="#">Gist</a></li>
-            <li><a class="nav-txt" href="#">Blog</a></li>
-            <li><a class="nav-txt" href="#">Help</a></li>
-          </ul>
-        </div>
-        <div class="right-header">
-          <ul class="right-side">
-            <li><a href="<% html_url %>"><img src="<% avatar_url %>" alt="avatar"><span class="user-name"><% login %></span></a></li>
-            <li><a href="#"><span class="octicon octicon-plus menu-down"></span></a></li>
-            <li><a href="https://github.com/notifications"><span class="octicon octicon-inbox"></span></a></li>
-            <li><a href="https://github.com/settings/profile"><span class="octicon octicon-gear"></span></a></li>
-            <li><a href="https://github.com"><span class="octicon octicon-sign-out"></span></a></li>
-          </ul>
-        </div>
-      </nav>
-    </header> 
+
     <div class="container">
-      <aside>
-        <div class="account">
-          <a href="#"><img src="<% user.avatar_url %>" alt="avatar"></a>
-          <h1 class="full-name"><% user.name %></h1>
-          <h4 class="account-name"><% user.login %></h4>
-        </div>
-        <ul class="contact">
-          <li><span class="octicon octicon-mail"></span><a href="<% user.email %>"></a></li>
-          <li><span class="octicon octicon-clock"></span>Joined on <% user.created_at %></li>
-        </ul>
-        <ul class="sidebar-stats">
-         <li><a href="#"><strong><% user.followers %></strong><small>Followers</small></a></li>
-         <li><a href="#"><strong></strong>0<small>Starred</small></a></li>
-         <li><a href="#"><strong><% user.following %></strong><small>Following</small></a></li>
-        </ul>
-        <div class="organizations">
-          <h3>Organizations</h3>
-          <ul id="orgs">
-            <li><img src="<% avatar_url %>" alt="org icon"></li>
-          </ul>
-        </div>
-      </aside>
-      <article class="content">
-        <nav class="navtabs-left">
-          <ul>
-            <li><span class="octicon octicon-diff-added"></span>Contributions</li>
-            <li class="clicked"><span class="octicon octicon-repo"></span>Repositories</li>
-            <li><span class="octicon octicon-rss"></span>Public activity</li>
-          </ul>
-          <div class="navtabs-right">
-            <div class="edit-button"><span class="octicon octicon-pencil"></span>Edit profile</div>
-          </div>
-        </nav>
-        <div class="tab-search-bar">
-          <form action="search">
-            <input type="text" class="repository-search" placeholder="find a repository...">
-            <input type="submit" class="searchy-button" title="Search">
-          </form>
-          <div class="make-new-button"><span class="octicon octicon-repo"></span>New</div>
-          <ul>
-            <li><a href="#">Mirrors</a></li>
-            <li><a href="#">Forks</a></li>
-            <li><a href="#">Sources</a></li>
-            <li><a href="#">Private</a></li>
-            <li><a href="#">Public</a></li>
-            <li class="all-bold"><a href="#">All</a></li>
-          </ul>
-        </div>
-        <ul class="list-repository">
-          <li>
-            <div class="repo-info-forked">
-              <h3><a href="#"><% name %></a></h3>
-              <div class="forked"><span class="octicon octicon-repo-forked"></span><a href="#"><% .full_name %></a></div>
-              <p><% description %></p>
-              <small>Updated <% updated_at %></small>
-            </div>
-            <div class="repo-stats"><span><% .language %></span>
-              <span class="octicon octicon-star"></span><span>0</span>
-              <span class="octicon octicon-git-branch"></span><span class="language"><% forks_count %></span>
-            </div>
-          </li>
-          <li>
-            <div class="repo-info-sourced">
-              <h3><a href="#"></a><% .name %></h3>
-              <p><% description %></p>
-              <small>Updated <% updated_at %></small>
-            </div>
-            <div class="repo-stats"><span><% .language %></span>
-              <span class="octicon octicon-star"></span><span>0</span>
-              <span class="octicon octicon-git-branch"></span><span class="language"><% .sources_count %></span>
-            </div>
-          </li>
-        </ul>
-      </article>
-    </div>
-    <footer>
-      <nav>
-        <ul class="footer-left">
-          <li>&copy;2015 GitHub, Inc.</li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Security</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <ul class="footer-right">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Training</a></li>
-          <li><a href="#">API</a></li>
-          <li><a href="#">Status</a></li>
-        </ul>
-        <div class="footer-icon"><a href="#"><span class="mega-octicon octicon-mark-github"></span></a></div>
-      </nav>
-    </footer>
+
+        <header>
+            <nav>
+
+                 <div class="left-header"></div>
+                    <ul class="explore-list">
+                        <li><a href="#" class="logo"><span class="octicon octicon-mark-github"></span></a></li>
+                        <li><form action="search"><input class="search-bar" type="text" placeholder="Search GitHub"></form></li>
+                        <li><a class="nav-txt" href="#">Explore</a></li>
+                        <li><a class="nav-txt" href="#">Gist</a></li>
+                        <li><a class="nav-txt" href="#">Blog</a></li>
+                        <li><a class="nav-txt" href="#">Help</a></li>
+                    </ul>
+                </div>
+
+                <div class="rightHeader">
+                     <ul class="right-side">
+                        <li><a href="#" class="avatarlink">
+                            <img src="https://avatars.githubusercontent.com/u/10402427?v=3">
+                                <span class="user-name">jtareb</span></a></li>
+                        <li><a href="#"><span class="octicon octicon-plus menu-down"></span></a></li>
+                        <li><a href="https://github.com/notifications"><span class="octicon octicon-inbox"></span></a></li>
+                        <li><a href="https://github.com/settings/profile"><span class="octicon octicon-gear"></span></a></li>
+                        <li><a href="https://github.com"><span class="octicon octicon-sign-out"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
 
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/underscore/underscore.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/repo.js"></script>
-        <script src="scripts/user.js"></script>
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
-</body>
-</html>
