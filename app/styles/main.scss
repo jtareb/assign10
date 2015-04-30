@@ -2,369 +2,222 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+
 // Custom Styles
-*{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
+body {
+  background: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
 }
-body{
-  header{
-    @include outer-container;
-    max-width: 100%;
-    background-color: #F5F5F5;
-    height: 50px;
 
-    .leftSide{
-      @include span-columns(6);
-      width: 100%;
-      float: left;
 
-      span{
-        float: left;
-        font-size: 26px;
-        position: absolute;
-        left: 227px;
-        top: 12px;
-        color: #333333;
-      }
+.container{
+  @include outer-container;
+  background-color:white;
+}//.container close brace
 
-      input{
-        position: relative;
-        left: 270px;
-        width: 350px;
-        height: 30px;
-        top: -11px;
-        border-radius: 6px;
-      }
+header{
+  @include span-columns(12);
+  height: 50px;
+  background-color:HSLA(0, 0%, 96%, 1);
+}
 
-      .explore{
-        position: relative;
-        left: 635px;
-        top:-36px;
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: 10pt;
-      }
+.leftHeader{
+  @include span-columns(8);
+  height: 100px;
+  background-color:HSLA(0, 0%, 96%, 1);
+  padding-top: 12px;
 
-      .gist{
-        position: relative;
-        left: 645px;
-        top:-36px;
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: 10pt;
-      }
+  img{
+    width:28px;
+    float:left;
+  }
 
-      .blog{
-        position: relative;
-        left: 655px;
-        top:-36px;
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: 10pt;
-      }
+  input{
+    width:350px;
+    padding-top: 6px;
+  }
+  .searchText{
+    float:left;
+    margin-left: 5px;
 
-      .help{
-        position: relative;
-        left: 665px;
-        top:-36px;
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: 10pt;
-      }
-    }
-
-    .rightside{
-      @include span-columns(6);
-      width: 100%;
-      float: left;
-
-      a.avatarLink{
-        float: right;
-        position: relative;
-        right: 225px;
-        bottom: 59px;
-        text-decoration: none;
-
-        img{
-          border-radius: 5px;
-        }
-        span{
-          position: relative;
-          bottom: 7px;
-          color: black;
-          margin: 4px;
-          font-size: 10pt;
-          font-weight: bold;
-          }
-          span.octicon.octicon-plus{
-            font-size: 12pt;
-
-          }
-          span.octicon.octicon-inbox{
-            font-size: 12pt;
-          }
-          span.octicon.octicon-gear{
-            font-size: 12pt;
-          }
-
-        }
-
-      }
-
-    }
-  .sidebar{
-    width: 240px;
-    height: 1490px;
-    margin-left: 200px;
+  }//end .searchText
+  .explore{
+    float:left;
+    padding-left: 10px;
+    text-decoration: none;
+    color:HSLA(0, 0%, 20%, 1);
+    font-size: 14px;
+    padding-top: 6px;
+  }//end .explore
+  .gist{
     float: left;
-    .Name{
-      border-bottom: 1px solid #CCCCCC;
-      padding-bottom: 10px;
-      img{
-        border-radius: 5px;
-      }
-      .fullName{
-        font-weight: bold;
-        font-size: 28px;
-      }
-      .userName{
-        font-size: 21px;
-        color: #666666;
-      }
-    }
-    .dateJoined{
-      padding-top: 13px;
-      padding-bottom: 13px;
-      border-bottom: 1px solid #CCCCCC;
+    padding-left: 10px;
+    text-decoration: none;
+    color:HSLA(0, 0%, 20%, 1);
+    font-size: 14px;
+    padding-top: 6px;
 
-      span.octicon.octicon-clock{
-        color: #CCCCCC;
-      }
-      span.joinDate{
-        font-size: 14px;
-        padding-left: 12px;
-      }
-    }
-    .followBar{
-      height: 75px;
-      border-bottom: 1px solid #CCCCCC;
-      .follower{
-        float: left;
-        width: 60px;
-        height: 60px;
-        a{
-          font-size: 23pt;
-          text-decoration: none;
-          padding-left: 20px;
-          color: #4183C4;
-          span.follower{
-            font-size: 9px;
-            padding-left: 6px;
-            color: #A6A6A6;
-          }
-        }
-      }
-      .starred{
-        float: left;
-        width: 60px;
-        height: 60px;
-        a{
-          font-size: 23pt;
-          text-decoration: none;
-          padding-left: 20px;
-          color: #4183C4;
-          span.star{
-            font-size: 9px;
-            padding-left: 6px;
-            color: #A6A6A6;
-          }
-        }
-      }
-      .following{
-        float: left;
-        width: 60px;
-        height: 60px;
-        a{
-          font-size: 23pt;
-          text-decoration: none;
-          padding-left: 20px;
-          color: #4183C4;
-          span.following{
-            font-size: 9px;
-            padding-left: 6px;
-            color: #A6A6A6;
-          }
-        }
-      }
-    }
-    .organizations{
-      height: 75px;
-      span{
-        font-weight: bold;
-        position: relative;
-        top: 9px;
-      }
-    }
-  }
-  .main{
-    float: right;
-    height: 1000px;
-    width: 975px;
+  }//end .gist
+  .blog{
+    float: left;
+    padding-left: 10px;
+    text-decoration: none;
+    color:HSLA(0, 0%, 20%, 1);
+    font-size: 14px;
+    padding-top: 6px;
+  }//end .blog
+  .help{
+    float: left;
+    padding-left: 10px;
+    text-decoration: none;
+    color:HSLA(0, 0%, 20%, 1);
+    font-size: 14px;
+    padding-top: 6px; 
+  }//end .help
+}//end .leftHeader
 
-    .mainHead {
-      width: auto;
-      height: 37px;
-      border-bottom: 1px solid #CCCCCC;
-      a{
-        text-decoration: none;
-        color: black;
-      }
-      .contributionsTab{
-        height: 30px;
-        width: 117px;
-        border: 1px solid #CCCCCC;
-        float: left;
-        }
-      .repositoriesTab{
-        height: 30px;
-        width: 117px;
-        border: 1px solid #CCCCCC;
-        float: left;
-      }
-      .publicActivity{
-        height: 30px;
-        width: 117px;
-        border: 1px solid #CCCCCC;
-        float: left;
-      }
-      .button{
-        float: right;
-        margin-right: 30px;
-        button{
-          height: 28px;
-          width: 110px;
-        }
-      }
-    }
-
-    .searchHeader{
-      width: auto;
-      height: 43px;
-      border-bottom: 1px solid #CCCCCC;
-      input.searchHead{
-        height: 35px;
-        width: 250px;
-        border-radius: 5px;
-        border-color: #51A7E8;
-      }
-      button{
-        height: 33px;
-        width: 65px;
-        border-radius: 3px;
-      }
-      a{
-        text-decoration: none;
-        color: #4183C4;
-        padding-left: 3px;
-      }
-      button.new{
-        width: 70px;
-        float: right;
-        margin-right: 46px;
-        margin-top: 3px;
-        background-color: #83D566;
-        color: white;
-      }
-    }
-
-    .reposList{
-      float: left;
-      length: auto;
-      width: auto;
-      .icons{
-        width: 850px;
-        height: 118px;
-        border-bottom: 1px solid #CCCCCC;
-        #nameSpan{
-          font-size: 25px;
-          text-decoration: none;
-          color: #4183C4;
-          position: relative;
-          top: 15px;
-        }
-        #descriptionSpan{
-          display: block;
-          position: relative;
-          top: 30px;
-          color: #666666;
-          font-size: 13px;
-        }
-        #updated_atSpan{
-          position: relative;
-          top: 46px;
-          font-size: 12px;
-          color: #666666;
-        }
-        #forkscount{
-          float: right;
-          color: #666666;
-          font-size: 15px;
-        }
-        #stargazers{
-          float: right;
-          color: #666666;
-          margin-right: 10px;
-          font-size: 15px;
-        }
-        #language{
-          float: right;
-          color: #666666;
-          margin-right: 10px;
-          font-size: 13px;
-        }
-      }
-    }
-  }
-  .footer{
-    clear: both;
-    width: auto;
-    height: 130px;
-    padding-top: 55px;
-    border-top: 1px solid #A6A6A6;
-    .gitFoot{
-      padding-left: 90px;
-      font-size: 10pt;
-      .octicon.octicon-question{
-        font-size: 9pt;
-        margin-right: 4px;
-      }
-    }
-    .leftFoot{
-      margin-left: 10px;
-      margin-right: 10px;
-      font-size: 9pt;
-      text-decoration: none;
-      color: #4183C4;
-    }
-    #footLogo{
-      margin-left: 220px;
-      margin-right: 255px;
-      font-size: 18pt;
-      color: #CCCCCC;
-    }
-    .rightFoot{
-      margin-left: 10px;
-      margin-right: 10px;
-      font-size: 9pt;
-      text-decoration: none;
-      color: #4183C4;
-    }
-  }
+.rightHeader{
+  @include span-columns(4);
+  height: 100px;
+  background-color:HSLA(0, 0%, 96%, 1);
 }
+.sideBar{
+  @include span-columns(3);
+  height: 800px;
+  background-color:white;
+  padding-top: 20px;
+  img{
+    width:230px;
+    border-radius: 6px;
+  }
+}//sideBar end brace
+
+.joinedOnDate{
+  font-size: 13px;
+  border-top:1px solid lightgrey;
+  line-height: 85px;
+  padding-top: 18px;
+  padding-right: 23px;
+}
+.joinedOnDate img{
+  width: 14px;
+
+}
+.nameFull{
+  display: block;
+overflow: hidden;
+width: 100%;
+font-size: 26px;
+line-height: 30px;
+text-overflow: ellipsis;
+font-weight:800;
+}
+.userLoginName{
+  font-size: 20px;
+  color:HSLA(0, 0%, 40%, 1);
+}
+
+
+.mainSection{
+  @include span-columns(9);
+  background-color:white;
+}
+.searchBar{
+  @include span-columns(12);
+  height: 60px;
+  border-top:1px solid lightgrey;
+  border-bottom:1px solid lightgrey;
+  text-align: middle;
+}
+
+
+.tabBar{
+  @include span-columns(12);
+  height: 55px;
+  background-color:white;
+}//end .tabBar
+.tabBar ul{
+  float:left;
+}
+.tabBar ul li{
+  float: left;
+  list-style: none;
+  padding-left:30px;
+}
+.editProfile{
+  float: left;
+  margin-left: 175px;
+  margin-top: 9px;
+  height: 36px;
+
+}
+.searchRepo{
+  float:left;
+  padding-top: 17px;
+}
+.repoFilter li:first-child{
+ padding-left: 38px;
+}
+.repoFilter li{
+  float:left;
+  list-style:none;
+  padding-left:15px;
+  padding-top: 4px;
+}
+
+.create{
+  margin-left: 17px;
+  line-height: 33px;
+  margin-top: -6px;
+  background-color: HSLA(105, 57%, 57%, 1);
+  color: white;
+  border-color: HSLA(104, 44%, 46%, 1);
+}
+
+
+
+.item{
+  padding-top:30px;
+}
+
+.innerMain{
+  @include span-columns(12);
+  background-color:white;
+  .nameLink a{
+    color:HSLA(210, 53%, 51%, 1);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    }//.nameLink close
+  .descriptColor{
+    color:black;
+    font-size: 15px;
+    padding-top: 10px;
+  }//.descriptColor close
+  .lastUp{
+    padding-top:10px;
+  }
+  .borderLine{
+    width:100%;
+    height: 1px;
+    background-color:lightgrey;
+  }
+  .nameLink:hover{
+    text-decoration: underline;
+  }
+}//.innerMain close
+
+footer{
+  @include span-columns(12);
+  height: 100px;
+  background-color:purple;
+}
+
+
+
+
+
+
+
+

@@ -1,16 +1,15 @@
 <!doctype html>
-<html class="no-js">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Assignment10</title>
+    <title>gitrepo</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
-    <link rel="stylesheet" href="../bower_components/octicons/octicons/octicons.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -18,201 +17,129 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="../bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
   </head>
-
+ 
   <body>
 
-  <div class="container">
+ 
 
-    <header>
+    <div class="container">
 
-        <div class="leftSide">
-
-            <a href="#" class="Octicon">
-
-                <span class="octicon octicon-mark-github"></span>
-
-            </a>
-
-            <form class="search">
-
-                <input class="search" type="text" placeholder="Search GitHub">
-
-            </form>
-
-            <a class="explore" href="https://github.com/explore">Explore</a>
-            <a class="gist" href="https://gist.github.com/">Gist</a>
-            <a class="blog" href="https://github.com/blog">Blog</a>
-            <a class="help" href="https://help.github.com/">Help</a>
-
-        </div>
-
-        <div class="rightSide">
-
-            <div class="iconName">
-
-                 <ul class="listIcon">
-
-                      <a href="#" class="avatarLink">
-
-                        <img src="https://avatars.githubusercontent.com/u/10402427?v=3" alt="avatar" width="25px">
-                        <span>Jtareb</span>
-                        <span class="octicon octicon-plus"></span>
-                        <span class="octicon octicon-triangle-down"></span>
-                        <span class="octicon octicon-inbox"></span>
-                        <span class="octicon octicon-gear"></span>
-                        <span class="octicon octicon-sign-out"></span>
-                    </a>
-                </ul>
-            </div>
-        </div>
-    </header>
-
-
-    <div class="sidebar">
-
-        <div class="Name">
-
-                <img src="https://avatars.githubusercontent.com/u/10402427?v=3" alt="avatar" width="240px">
-                <span class="fullName">John Albritton</span><br>
-                <span class="userName">jtareb</span></br>
-                
-        </div>
-
-        <div class="dateJoined">
-
-                <span class="octicon octicon-clock"></span>
-                <span class="joinDate">Joined on Jan 5, 2015</span>
-
-        </div>
-        
-        <div class="followBar">
-            <div class="follower">
-
-                     <a href="#">1</a>
-                     <span class="follower">Follower</span>
-
-            </div>
-
-            <div class="starred">
-
-                    <a href="#">0</a>
-                    <span class="star">Starred</span>
-
-            </div>
-
-            <div class="following">
-
-                      <a href="#">0</a>
-                      <span class="following">Following</span>
-            </div>
-        </div>
-
-    </div>
-
-
-
-    <div class="organizations">
-
-         <span class="organize">Organizations</span>
-
-    </div>
-
-    <div class="main">
-
-        <div class="mainHeader">
-
-            <div class="contributionsTab">
-
-                <a href="#"><span class="octicon octicon-diff-added"></span><span>Contributions</span></a>
-
-            </div>
-
-            <div class="repositoriesTab">
-
-            <a href="#"><span class="octicon octicon-repo"></span><span>Repositories</span></a>
-
-            </div>
-
-            <div class="publicActivity">
-
-            <a href="#"><span class="octicon octicon-rss"></span><span>Public Activity</span></a>
-
-            </div>
-
-            <div class="button">
-
-            <button type="button"><span class="octicon octicon-pencil"></span><span>Edit profile</span></button>
-
-            </div>
-
-        </div>
-
-        <div class="searchHeader">
-
-
-             <form class="headerSearch" action="">
-
-                <input class="searchHead" type="text" placeholder="Find a repository...">
-                <button type="button">Search</button>
-
-                <a class="all"href="#">All</a>
-                <a class="public"href="#">Public</a>
-                <a class="private"href="#">Private</a>
-                <a class="sources"href="#">Sources</a>
-                <a class="forks"href="#">Forks</a>
-                <a class="mirrors"href="#">Mirrors</a>
-
-                <button class="new"><span class="octicon octicon-repo"></span>New</button>
-
-
+      <header>
+        <div class="leftHeader">
+          <a href="https://github.com/"><img src="../images/GitHub-Mark-64px.png"></a>
+          <form class="searchText">  
+            <input type="text" id="input_area" placeholder="Search GitHub">
           </form>
+          <a class="explore" href="tps://github.com/explore">Explore<a>
+          <a class="gist" href="https://gist.github.com/">Gist<a>
+          <a class="blog" href="https://github.com/blog">Blog<a>
+          <a class="help" href="https://help.github.com/">Help</a>
 
         </div>
 
-        <div class="reposList"></div>
+        <div class="rightHeader"></div>
+ </header>
 
+    <div class="sideBar">
+        <script type="text/template" id="userTemplate">
+        <div class="userSidebar">
+            <%=userAvatar%> 
+            <span class="nameFull"><%=userName%></span>
+            <span class="userLoginName"><%=userLogin%></span><br/>
+            <span class="joinedOnDate"><img src="../images/GitHub-Mark-32px">Joined on <%=joinedDate%></span>
 
-        <div class="footer">
-
-                <span class="gitFoot"><span class="octicon octicon-question"></span>2015 GitHub, Inc.</span>
-                <a href="#" class="leftFoot">Terms</a>
-                <a href="#" class="leftFoot">Privacy</a>
-                <a href="#" class="leftFoot">Security</a>
-                <a href="#" class="leftFoot">Contact</a>
-                <span id="footLogo" class="octicon octicon-mark-github"></span>
-                <a href="#" class="rightFoot">Status</a>
-                <a href="#" class="rightFoot">API</a>
-                <a href="#" class="rightFoot">Training</a>
-                <a href="#" class="rightFoot">Shop</a>
-                <a href="#" class="rightFoot">Blog</a>
-                <a href="#" class="rightFoot">About</a>
-
+            <div class="follow"><span><%=numFollower%></span><a href="<%=followURL%>">Follower</a></div>
+            <div class="starred"><span><%=starredNumber%></span><a href="<%=starredURL%>">Starred</a></div>
+            <div class="following"><a href="<%=followingURL%>">Following</a></div>
+            <span class="orgListTitle">Organizations</span>
         </div>
-
+      </script>   <!--end of template attempt-->
     </div>
 
 
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/underscore/underscore.js"></script>    
-    <script src="scripts/repo.js"></script>
-    <script src="scripts/user.js"></script>
-    <script src="scripts/main.js"></script>
 
+    <div class="mainSection">
+
+    <div class="tabBar">
+      <ul>
+        <li>Contributions</li>
+        <li>Repositories</li>
+        <li>Public activity</li>
+      </ul>
+      <form action="https://github.com/settings/profile">
+         <input class="editProfile" type="submit" value="Edit profile">
+      </form>
+    </div> 
+
+
+      <div class="searchBar">
+
+        <form class="searchRepo">  
+          <input type="text" id="input_area" placeholder="Search GitHub">
+          <input class="button" type="submit" value="Search">
+        </form>
+
+        <ul class="repoFilter">
+          <li>All</li>
+          <li>Public</li>
+          <li>Private</li>
+          <li>Sources</li>
+          <li>Forks</li>
+          <li>Mirrors</li>
+        </ul>
+        <form  action="https://github.com/new">
+         <input class="create" type="submit" value="New">
+         </form>
+
+      </div><!--tabBar close brace-->
+
+      <div class="innerMain">
+<!--beggining of template att-->
+
+      <script type="text/template" id="repoTemplate">
+        <div class="item">
+            <span class="nameLink"><%= repoLink %></span>
+            <div class="descriptColor"><%= descript %></div>
+            <div class="lastUp"><time><%= lastUpdated %></time></div>
+            <div class="borderLine"></div>
+        </div>
+
+    
+      </script>   <!--end of template attempt-->
+
+
+ 
+
+
+
+
+
+
+      </div>
+
+      </div><!--main section close brace-->
+      
+
+  </div><!--container close brace-->
+
+<footer>This is the footer</footer>
+
+
+
+   
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+        <script src="scripts/starredAPI.js"></script>
+        <script src="scripts/repoAPI.js"></script>
+        <script src="scripts/userAPI.js"></script>
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
 </body>
 </html>
-                
-
-
-
-
-
-
-
-
-
-
-
