@@ -2,95 +2,61 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
-// Custom Styles
-*{
-  margin: 0;
-  padding: 0;
-  list-style: none;
+@mixin centerPage() {
+  margin: 0 auto;
+  width: 1020px;
+  padding: 0 20px;
+}
 
-body {
-  background-color: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@mixin searchBox($width, $height) {
+  width: $width;
+  height: $height;
+  padding: 7px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+}
+
+// Buttons & Menu Down Icon
+@mixin baseButton() {
+  font-weight: 700;
+  padding: 7px 12px;
+  line-height: 24px;
   color: #333;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+  background-color: #ddd;
+  background-image: linear-gradient(#eee, #ddd);
+  background-repeat: repeat-x;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
-.container {
-  @include outer-container;
-  background-color: white;
+
+
+.edit-button {
+  @include baseButton;
+  padding: 0 10px;
 }
 
-  header {
-    @include span-columns(12);
-    height: 50px;
-    background-color:HSLA(0, 0%, 96%, 1);
-    max-width: 100%;
-  }
+.make-new-button {
+  @include baseButton;
+  background-color: #60b044;
+  background-image: linear-gradient(#8add6d, #60b044);
+  background-repeat: repeat-x;
+  border-color: #5ca941;
+  color: white;
+}
 
-  .left-header {
-    @include span-columns(6);
-    float: left;
-
-      span {
-        float: left;
-        font-size: 26px;
-        position: absolute;
-        left: 227px;
-        top: 12px;
-        color: #333333;
-      }
-
-      input {
-        position: relative;
-        left: 270px;
-        width: 350px;
-        height: 30px;
-        top: -11px;
-        border-radius: 6px;
-      }
-
-        .explore {
-        position: relative;
-        left: 635px;
-        top:-36px;
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: 10pt;
-      }
-
-      .gist {
-        position: relative;
-        left: 645px;
-        top:-36px;
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: 10pt;
-      }
-
-      .blog {
-        position: relative;
-        left: 655px;
-        top:-36px;
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: 10pt;
-      }
-
-      .help {
-        position: relative;
-        left: 665px;
-        top:-36px;
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-size: 10pt;
-      }
-    }
-
-
-
-
-
+.menu-down:after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  content: "";
+  vertical-align: -2px;
+  border: 4px solid;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
 
