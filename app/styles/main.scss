@@ -139,9 +139,12 @@ header {
    @include centerPage;
    overflow: hidden;
 
+  .left-header {
+    float: left;
+  }
     li {
       float: left;
-      margin: 0 9px;
+      margin: 0 7px;
       line-height: 50px;
       font-weight: 700;
       cursor: pointer;
@@ -196,44 +199,7 @@ header {
       }
     }
 
-  
-      .right-header {
-        float: right;
-      ul.right-side {
-        //float: right;
-        li {
-          margin: 0 5px;
-          a {
-            color: #333;
-            &:hover {
-              color: #4183c4;
-            }
-          }
-          img {
-            padding-top: 5px;
-            width: 20px;
-            border-radius: 5px;
-            vertical-align: middle;
-          }
-          .user-name {
-            margin: 0 5px;
-          }
-          a span {
-            font-size: 18px;
-            color: #333;
-            &:hover {
-              color: #4183c4;
-            }
-          }
-          .octicon-plus:after {
-            margin-left: 2px;
-          }
-          .octicon-inbox {
-            font-size: 20px;
-          }
-        }
-      }
-    }
   }
-}
+
+ 
 
