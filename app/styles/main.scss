@@ -188,26 +188,30 @@ header {
         .nav-txt {
           font-size: 13px;
           color: hsla(1, 0%, 0%, 1.0)
-          &:hover {
-            color: black;
-          }
+          //&:hover {
+          //  color: black;
+          //}
 
         }
       }
     }
 
+  
       .right-header {
-      float: right;
-      ul.listIcon {
+        float: right;
+      ul.right-side {
+        //float: right;
         li {
+          padding: 0 5px;
           margin: 0 5px;
           a {
-            color: hsla(1, 0%, 0%, 1.0);
+            color: #333;
             &:hover {
-              color: hsla(1, 0%, 0%, 1.0);
+              color: #4183c4;
             }
           }
           img {
+            padding-top: 5px;
             width: 20px;
             border-radius: 3px;
             vertical-align: middle;
@@ -217,9 +221,9 @@ header {
           }
           a span {
             font-size: 18px;
-            color: hsla(1, 0%, 0%, 1.0);
+            color: #333;
             &:hover {
-              color: #hsla(1, 0%, 0%, 1.0);
+              color: #4183c4;
             }
           }
           .octicon-plus:after {
@@ -233,3 +237,4 @@ header {
     }
   }
 }
+
