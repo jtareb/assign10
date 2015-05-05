@@ -2,247 +2,95 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
-//Vars
-$picSize: 230px;
-$orgIconSize: ($picSize / 5) - 3;
-$pageWidth: 1020px;
-
-
-//Mix Ins
-//@mixin centerPage() {
-//  margin: 0 auto;
- // width: 1020px;
-//  padding: 0 20px;
-//}
-
-//@mixin searchBox($width, $height) {
-//  width: $width;
-// height: $height;
-//  padding: 7px 8px;
-//  border: 1px solid #ccc;
-//  border-radius: 3px;
-//  box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
-//}
-
-// Buttons & Menu Down Icon
-//@mixin baseButton() {
-//  font-weight: 700;
-//  padding: 7px 12px;
-//  line-height: 24px;
-//  color: #333;
-//  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
-// background-color: #ddd;
-//  background-image: linear-gradient(#eee, #ddd);
-//  background-repeat: repeat-x;
-//  border: 1px solid #ccc;
-//  border-radius: 3px;
-//  cursor: pointer;
-//}
-
-
-
-//.edit-button {
-//  @include baseButton;
-//  padding: 0 10px;
-//}
-
-//.make-new-button {
-//  @include baseButton;
-//  background-color: #60b044;
-//  background-image: linear-gradient(#8add6d, #60b044);
-//  background-repeat: repeat-x;
-// border-color: #5ca941;
-// color: white;
-//}
-
-//.menu-down:after {
-// display: inline-block;
-//  width: 0;
-//  height: 0;
-//  content: "";
-//  vertical-align: -2px;
-//  border: 4px solid;
-// border-right-color: transparent;
-//  border-left-color: transparent;
-// border-bottom-color: transparent;
-// }
-
-
 // Custom Styles
-//* {
-//  margin: 0;
-// padding: 0;
-//  text-decoration: none;
-//  box-sizing: border-box;
-//  list-style: none;
-//    &:focus {
-//    outline: 0;
-//  }
-//}
-
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  background-color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
-  background: #fff;
-  box-sizing: border-box;
 }
 
-ul { 
-  margin: 0; padding: 0;
+.container {
+  @include outer-container;
+  background-color: white;
 }
 
-li { 
-  list-style: none;
+  header {
+    @include span-columns(12);
+    height: 50px;
+    background-color:HSLA(0, 0%, 96%, 1);
+    max-width: 100%;
   }
 
-a {
-  text-decoration: none;
-  color: #4183c4;
-}
+  .left-header {
+    @include span-columns(6);
+    float: left;
 
-h3 { 
-  font-size: 20px; margin-bottom: 13px;
-}
-
-h4 {
-  
-}
-
-p { 
-  margin: 8 0;
-}
-
-small {
-  font-size: 13px; 
-  color: #888;
-  }
-
-.searchy-button {
-  position: relative;
-  display: inline-block;
-  padding: 7px 12px;
-  font-size: 13px;
-  font-weight: bold;
-  color: #333;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
-  white-space: nowrap;
-  vertical-align: middle;
-  background-color: #eee;
-  background-repeat: repeat-x;
-  border: 1px solid #d5d5d5;
-  border-radius: 3px;
-}
-
-span {
-  .octicon {
-    margin-right: 5px;
-  }
-}
-
-header {
-  height: 50px;
-  background: #F5F5F5;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
-
-  nav {
-   @include centerPage;
-   overflow: hidden;
-   
-   li {
-      float: left;
-      margin: 0 9px;
-      line-height: 50px;
-      font-weight: 700;
-      cursor: pointer;
-    
-      &:first-child {
-        margin: 0 -5px 0 0;
-      }
-    
-      &:last-child {
-        margin-right: 0;
+      span {
+        float: left;
+        font-size: 26px;
+        position: absolute;
+        left: 227px;
+        top: 12px;
+        color: #333333;
       }
 
-      &:hover .nav-txt {
-        color: #4183c4;
-      }
-    
-      &:hover .logo {
-        color: #4183c4;
-      }
-    }
-    
-    ul.explore-list {
-      float: left;
-      
-      li {
-        .search-bar {
-          @include searchBox(358px, 26px);
-          font-size: 12px;
-          font-weight: 400;
-        }
-
-        &:first-child {
-          margin-top: 5px;
-        }
-
-        a span{
-          font-size: 28px;
-          color: #333;
-          &:hover {
-            color: #4183c4;
-          }
-        }
-
-        .nav-txt {
-          font-size: 13px;
-          color: #333;
-          &:hover {
-            color: #4183c4;
-          }
-
-        }
-      }
-    }
-     .righthead{
-      @include span-columns(6);
-      width: 100%;
-      float: left;
-
-      a.avatarLink{
-        float: right;
+      input {
         position: relative;
-        right: 225px;
-        bottom: 59px;
-        text-decoration: none;
-
-        img{
-          border-radius: 5px;
-        }
-        span{
-          position: relative;
-          bottom: 7px;
-          color: black;
-          margin: 4px;
-          font-size: 10pt;
-          font-weight: bold;
-          }
-          span.octicon.octicon-plus{
-            font-size: 12pt;
-
-          }
-          span.octicon.octicon-inbox{
-            font-size: 12pt;
-          }
-          span.octicon.octicon-gear{
-            font-size: 12pt;
-          }
-        }
+        left: 270px;
+        width: 350px;
+        height: 30px;
+        top: -11px;
+        border-radius: 6px;
       }
 
-  
-  }
-}
+        .explore{
+        position: relative;
+        left: 635px;
+        top:-36px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-size: 10pt;
+      }
+
+      .gist{
+        position: relative;
+        left: 645px;
+        top:-36px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-size: 10pt;
+      }
+
+      .blog{
+        position: relative;
+        left: 655px;
+        top:-36px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-size: 10pt;
+      }
+
+      .help{
+        position: relative;
+        left: 665px;
+        top:-36px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-size: 10pt;
+      }
+    }
+
+
+
+
+
+
