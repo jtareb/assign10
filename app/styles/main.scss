@@ -73,7 +73,7 @@
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 13px;
-  color: #333;
+  color: black;
   background: #fff;
   box-sizing: border-box;
 }
@@ -88,7 +88,7 @@ li {
 
 a {
   text-decoration: none;
-  color: #4183c4;
+  color: hsla(1, 0%, 0%, 1.0);
 }
 
 h3 { 
@@ -170,6 +170,7 @@ header {
           @include searchBox(358px, 26px);
           font-size: 12px;
           font-weight: 400;
+
         }
 
         &:first-child {
@@ -178,32 +179,32 @@ header {
 
         a span{
           font-size: 28px;
-          color: #333;
+          color: hsla(1, 0%, 0%, 1.0);
           &:hover {
-            color: #4183c4;
+          
           }
         }
 
         .nav-txt {
           font-size: 13px;
-          color: #333;
+          color: hsla(1, 0%, 0%, 1.0)
           &:hover {
-            color: #4183c4;
+            //color: #4183c4;
           }
 
         }
       }
     }
 
-      div {
+      .right-header {
       float: right;
-      ul.right-side {
+      ul.listIcon {
         li {
           margin: 0 5px;
           a {
-            color: #333;
+            color: hsla(1, 0%, 0%, 1.0);
             &:hover {
-              color: #4183c4;
+              color: hsla(1, 0%, 0%, 1.0);
             }
           }
           img {
@@ -216,9 +217,9 @@ header {
           }
           a span {
             font-size: 18px;
-            color: #333;
+            color: hsla(1, 0%, 0%, 1.0);
             &:hover {
-              color: #4183c4;
+              color: #hsla(1, 0%, 0%, 1.0);
             }
           }
           .octicon-plus:after {
