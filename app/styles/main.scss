@@ -2,224 +2,583 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+//Variables
+$light-teal: #F5F5F5;
+$black: #333333;
+$dark-grey: #666666;
+$light-grey: #EEEEEE;
+$line-grey: #DDDDDD;
+$table-grey: #D8D8D8;
+$star-grey: #888888;
+$text: #777777;
+$blue: #4183C4;
 
-// Custom Styles
-body {
-  background: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+//MIXINS
+@mixin table-heading {
+  background-color: $light-teal;
+  border-radius: 3px;
+  border: 1px solid #E5E5E5;
 }
 
-
-.container{
-  @include outer-container;
-  background-color:white;
-}//.container close brace
-
-header{
-  @include span-columns(12);
-  height: 50px;
-  background-color:HSLA(0, 0%, 96%, 1);
-}
-
-.leftHdr{
-  @include span-columns(8);
-  height: 100px;
-  background-color:HSLA(0, 0%, 96%, 1);
-  padding-top: 12px;
-
-  .logo{
-    width:28px;
-    float:left;
-  }
-
-  input{
-    width:350px;
-    padding-top: 6px;
-  }
-  .searchText{
-    float:left;
-    margin-left: 5px;
-  }
-
-  .explore{
-    float:left;
-    padding-left: 10px;
-    text-decoration: none;
-    color:HSLA(0, 0%, 20%, 1);
-    font-size: 14px;
-    padding-top: 6px;
-  }
-
-  .gist{
-    float: left;
-    padding-left: 10px;
-    text-decoration: none;
-    color:HSLA(0, 0%, 20%, 1);
-    font-size: 14px;
-    padding-top: 6px;
-  }
-
-  .blog{
-    float: left;
-    padding-left: 10px;
-    text-decoration: none;
-    color:HSLA(0, 0%, 20%, 1);
-    font-size: 14px;
-    padding-top: 6px;
-  }
-
-  .help{
-    float: left;
-    padding-left: 10px;
-    text-decoration: none;
-    color:HSLA(0, 0%, 20%, 1);
-    font-size: 14px;
-    padding-top: 6px; 
-  }
-}
-
-.rightHeader{
-  @include span-columns(4);
-  height: 100px;
-  background-color:HSLA(0, 0%, 96%, 1);
-}
-.sideBar{
-  @include span-columns(3);
-  height: 800px;
-  background-color:white;
-  padding-top: 20px;  
-}
-
-.nameFull{
-  display: block;
-overflow: hidden;
-width: 100%;
-font-size: 26px;
-line-height: 30px;
-text-overflow: ellipsis;
-font-weight:800;
-}
-
-.userLoginName{
-  font-size: 20px;
-  color:HSLA(0, 0%, 40%, 1);
-}
-
-
-.joinedOnDate{
+@mixin link {
+  text-decoration: none;
+  color: $blue;
+  font-weight: bold;
   font-size: 13px;
-  border-top:1px solid lightgrey;
-  line-height: 85px;
-  padding-top: 18px;
-  padding-right: 23px;
-}
-
-.joinedOnDate img{
-  width: 14px;
-
-}
-
-.userLoginName{
-  font-size: 20px;
-  color:HSLA(0, 0%, 40%, 1);
-}
-
-
-.main{
-  @include span-columns(9);
-  background-color:white;
-}
-.searchFilter{
-  @include span-columns(12);
-  height: 60px;
-  border-top:1px solid lightgrey;
-  border-bottom:1px solid lightgrey;
-  text-align: middle;
-}
-
-
-.tabBar{
-  @include span-columns(12);
-  height: 55px;
-  background-color:white;
-}//end .tabBar
-.tabBar ul{
-  float:left;
-}
-.tabBar ul li{
-  float: left;
-  list-style: none;
-  padding-left:30px;
-}
-.edit{
-  float: left;
-  margin-left: 175px;
-  margin-top: 9px;
-  height: 36px;
-
-}
-.searchRepo{
-  float:left;
-  padding-top: 17px;
-}
-.repoFilter li:first-child{
- padding-left: 38px;
-}
-.repoFilter li{
-  float:left;
-  list-style:none;
-  padding-left:15px;
-  padding-top: 4px;
-}
-
-.newRepo{
-  margin-left: 17px;
-  line-height: 33px;
-  margin-top: -6px;
-  background-color: HSLA(105, 57%, 57%, 1);
-  color: white;
-  border-color: HSLA(104, 44%, 46%, 1);
-}
-
-
-
-.item{
-  padding-top:30px;
-}
-
-.innerMain{
-  @include span-columns(12);
-  background-color:white;
-  .nameLink a{
-    color:HSLA(210, 53%, 51%, 1);
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 600;
-    }//.nameLink close
-  .descriptColor{
-    color:black;
-    font-size: 15px;
-    padding-top: 10px;
-  }//.descriptColor close
-  .lastUp{
-    padding-top:10px;
-  }
-  .borderLine{
-    width:100%;
-    height: 1px;
-    background-color:lightgrey;
-  }
-  .nameLink:hover{
+  &:hover {
     text-decoration: underline;
   }
-}//.innerMain close
-
-footer{
-  @include span-columns(12);
-  height: 100px;
-  background-color:purple;
 }
+
+@mixin header-links {
+  ul {
+    display: inline-block;
+    margin: 4px 0px 0px 14px;
+    padding: 0;
+    float: left;
+    a {
+      display: inline-block;
+      color: $black;
+      font-weight: bold;
+      padding: 0px 5px;
+      font-size: 13px;
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+}
+
+@mixin repo-items {
+  
+  &:hover h4 {
+    text-decoration: underline;
+  }
+  .table {
+    border: 1px solid $table-grey;
+    border-radius: 0;
+    padding: 4px 0px;
+    position: relative;
+    color: $dark-grey;    
+    }
+    span {
+      float: left;
+      padding: 3px 8px
+    }
+    h4 {
+      display: block;
+      color: $blue;
+      font-size: 14px;
+    }
+    p {
+      display: inline-block;
+      font-size: 12px;
+      margin: 5px 0px;;
+    }
+    .starred {
+      position: absolute;
+      top: 14px;
+      right: 10px; 
+      float: right;
+      color: $star-grey;
+      font-size: 15px;
+
+      span {
+        padding: 0px 2px;
+      }
+      .star-text {
+        font-size: 12px;
+        margin-top: 2px;
+      }
+    }
+}
+
+
+// Custom Styles
+* {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 3px;
+}
+
+a:hover {
+  cursor: pointer;
+  color: $blue;
+}
+
+body {
+  background: #ffffff;
+  font-family: "Helvetica Nevue", Helvetica, Arial, sans-serif;
+  color: #333333;
+  @include span-columns(12);
+  min-width: 1100px;
+}
+
+
+////////////////////////////////////////////////
+/*HEADER//////////////////////////////////////*/
+header {
+  @include table-heading;
+  @include span-columns(12);
+  min-width: 1000px;
+  width: 100%;
+  margin: 0;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  height: 55px;
+  overflow: auto;
+
+
+  .wrapper { 
+    @include outer-container;
+    @include header-links;
+    .search-container {
+      @include span-columns(7);
+      .mega-octicon {
+        font-size: 28px;
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        padding: 0;
+        float: left;
+        color: $black;
+        &:hover {
+          color: $blue;
+        }
+      }      
+      form {
+        display: inline-block;
+        float: left;        
+        .search-bar {
+          width: 365px;
+          height: 28px;
+          margin: 3px 0px 0px 6px;
+          border: 1px solid #CCCCCC;
+          border-radius: 3px;
+          background-color: white;
+          font-size: 12px;
+          padding: 3px 5px;
+        }
+        input {
+          border: 1px solid transparent;
+        }
+      }
+      ul {
+        margin: 7px 0px 0px 14px;
+      }  
+    }
+    .userNavContainer {
+      @include span-columns(4);
+      float: right;
+      li {
+        float: left;
+        margin: 0px 1px;
+        padding: 2px;
+
+        img {
+          width: 20px;
+          height: 20px;
+          float: left;
+        }
+        .user span {
+          display: inline-block;
+          margin: 3px 0px 0px 3px;
+        }
+      }
+    }
+  }
+}
+
+////////////////////////////////////////////////
+/*MAIN CONTENT////////////////////////////////*/
+.main-container {
+  @include outer-container;
+  padding-left: 10px;
+////////////////////////////////////////////////
+/*Left Quarter///////////////////////////////*/
+  .left-quarter {
+    @include span-columns(3);
+    display: inline-block;
+    .profile-container {
+      border-bottom: 1px solid $light-grey;
+      padding: 20px 0px;
+      img {
+        width: 230px;
+        height: 230px;
+        border-radius: 5px;
+      }
+      h4 {
+        font-weight: 200;
+        color: $dark-grey;
+        font-size: 20px;
+      }
+    }
+    .user-info {
+      padding: 15px 0px;
+      border-bottom: 1px solid $light-grey;
+      span {
+        font-size: 16px;
+      }
+      p {
+        display: inline-block;
+        font-size: 14px;
+        padding: 3px 0px;
+        margin-left: 5px;
+      }
+    }
+    .user-stats {
+      padding: 15px 0px;
+      border-bottom: 1px solid $light-grey;
+      a {
+        display: inline-block;
+        text-align: center;
+        padding: 0px 15px;
+        color: #999999;
+
+        h3 {
+          color: $blue;
+          font-size: 28px;
+          font-weight: 700;
+          line-height: 1;
+        }
+        span {
+          font-size: 11px;
+        }
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+    .user-organizations {
+      padding: 15px 0px;
+      border-bottom: 1px solid $light-grey;
+      h4 {}
+      img {
+        height: 42px;
+        width: 42px;
+        margin: 15px 0px; 
+      }
+    }
+  }
+
+////////////////////////////////////////////////
+/*Right Quarter///////////////////////////////*/
+  .right-3quarter {
+    @include span-columns(8);
+    padding: 20px 0px;
+    .edit-profile {
+      @include table-heading;
+      display: inline-block;
+      float: right;
+      font-weight: bold;
+      width: 117px;
+      height: 26px;
+      font-size: 13px;
+      padding: 3px 10px;
+      border: 1px solid #D5D5D5;
+      text-align: center;
+
+      &:hover {
+        background-color: #E0E0E0;
+        border: 1px solid #CCCCCC;
+      }
+      a {
+        color: $black
+      }
+      span {
+        // float: left;
+      }
+      p {
+        display: inline-block;
+      }
+    }
+    .tabs {
+      font-size: 14px;
+      border-bottom: 1px solid $line-grey;
+      ul {
+        display: inline-block;
+        li {
+            display: inline-block;
+            margin-left: 5px;
+            padding: 8px;
+          a {
+            color: $dark-grey; 
+            overflow: auto;            
+            span {
+              display: inline-block;
+              float: left;
+            }
+            h4 {
+              display: inline;
+              font-weight: normal;
+              margin-left: 3px;
+            }
+          }
+        }
+        .selected {
+          border-top: 1px solid $line-grey;
+          border-right: 1px solid $line-grey;
+          border-left: 1px solid $line-grey;
+          border-bottom: 0px;
+        }
+        .selected a {
+           color: $black;
+        }
+      }    
+    }
+
+    .tab-content-container {
+      @include outer-container;
+      
+      // .repos-container {
+      //   @include outer-container;
+      //   visibility: hidden;
+
+      //   .pop-repos {
+      //     @include span-columns(4 of 8);
+          
+      //     a {
+      //       @include repo-items;
+      //     }
+      //   }
+        
+      //   .repo-contributed-to {
+      //     @include span-columns(4 of 8);
+        
+      //     a {
+      //       @include repo-items;
+      //     }
+      //   }
+      // }
+      .filter-bar {
+        display: block;
+        border-bottom: 1px solid $line-grey;
+        padding: 15px 0px 10px 0px;
+        overflow: auto;
+
+        .new-button {
+          display: inline-block;
+          float: right;
+          width: 68px;
+          height: 34px;
+          background-color: #39BD45;
+          border: 1px solid #32B33F;
+          color: white;
+          padding: 8px 11px;
+          font-weight: bold;
+          font-size: 13px;
+
+          &:hover {
+            background-color: #5CA841;
+            color: white;
+          }
+          p {
+            display: inline-block;
+          }
+        }
+
+        ul {
+          float: right;
+          margin: 5px 15px 0px 0px;
+          li {
+            @include link;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 0px 2px;
+
+            a {
+              color: $blue;
+            }
+          }
+          .active-filter a {
+            color: $black;
+            font-weight: bold;
+          }
+        }
+
+        .filter-search-bar {
+          
+          
+          input {
+            width: 260px;
+            padding: 6px 15px 8px 15px;
+            display: inline-block;
+            border: 1px solid #D5D5D5;
+            float: left;
+            font-size: 13px;
+            // outline: none;
+          }
+        }
+
+        .filter-search-button {
+          border: 1px solid #D5D5D5;
+          background-color: $light-teal;
+          display: inline-block;
+          margin-left: 5px;
+          padding: 4px 15px 7px 15px;
+          float: left;
+
+          span {
+            color: $black;
+            font-size: 13px;
+            font-weight: bold;
+          }
+          &:hover {
+            background-color: #E1E1E1;
+            border: 1px solid #CCCCCC;
+          }
+        }
+      }
+    }
+  }
+}
+
+.repo-list {
+  
+  ul {    
+    li {
+      padding: 25px 0px;
+      border-bottom: 1px solid $light-grey;
+      overflow: auto;
+      position: relative;
+
+      a {
+        display: inline-block;
+        color: $blue;
+        font-size: 20px;
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+        
+      .side-tags {
+        display: inline-block;
+        color: $star-grey;
+        font-weight: bold;
+        font-size: 12px;
+        position: absolute;
+        top: 35px;
+        right: 0px;
+
+        span {
+          display: inline-block;
+          margin-left: 5px;
+        }
+        .stars {
+          display: inline-block;
+          margin-left: 5px;
+          span {
+            margin: 0px;
+          }
+        }
+        .branches {
+          display: inline-block;
+          margin-left: 5px;
+          span {
+            margin: 0px;
+          }
+        }
+      }
+      .description {
+        color: $dark-grey;
+        font-size: 14px; 
+        padding: 10px 0px;
+      }
+      .updated {
+        color: $star-grey;
+        font-size: 13px;
+        padding: 5px 0px; 
+      }
+    }
+  }
+}
+////////////////////////////////////////////////
+/*Footer////////////////////////////////*/
+
+footer {
+  @include span-columns(11);
+  @include shift(1);
+  padding: 40px 0px 40px 10px;
+
+
+  .footer-wrapper {
+    @include span-columns(10);
+    @include link;
+    position: relative;
+    display: block;
+
+    .left-footer {
+      float: left;
+      li {
+        display: inline-block;
+        font-weight: normal;
+        font-size: 12px;
+        padding: 5px;
+        color: $dark-grey;
+        a {
+          color: $blue;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    span {
+      position: absolute;
+      left: 50%;
+      display: inline-block;
+      color: #CCCCCC;
+      font-size: 24px;
+      &:hover {
+        color: #BBBBBB;
+      }
+    }
+    .right-footer {
+      float: right;
+      ul {
+        li {
+          display: inline-block;
+          font-weight: normal;
+          font-size: 12px;
+          padding: 5px;
+          a {
+            color: $blue;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

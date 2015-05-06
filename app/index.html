@@ -19,159 +19,63 @@
     <!-- endbuild -->
 
   </head>
+
+
+
   <body>
 
-    <div class="container">
+    <header>
 
-
-        <header>
-
-            <div class="leftHdr">
-                <a href="#" class="logo"><span class="octicon octicon-mark-github"></span></a>
-                <form class="searchText">
-                    <input type=:"text" id="input_area" placeholder="Search Github">
+        <div class="wrapper">
+            <div class="search-container">
+                <a href="#"><span class="mega-octicon octicon-mark-github"></span></a>
+                <form>
+                    <input class="searchBar" type="text" placeholder="Search Github">
                 </form>
-                <a class="explore" href="https://github.com/explore">Explore</a>
-                <a class="gist" href="https://gist.github.com">Gist</a>
-                <a class="blog" href="https://github.com/blog">Blog</a>
-                <a class="help" href="https://help.github.com/">Help</a>
-            </div>
-
-
-            <div class="rightHdr">
-                 <ul class="listIcon">
-
-                    <li><img src="https://avatars.githubusercontent.com/u/10402427?v=3" alt="avatar" width="25px">
-                     <span class=user-name>jtareb</span></li>
-                    <li><span class="octicon octicon-plus"></span><span class="octicon octicon-triangle-down"></span></li>
-                    <li><span class="octicon octicon-inbox"></span></li>
-                    <li><span class="octicon octicon-gear"></span></li>
-                    <li><span class="octicon octicon-sign-out"></span></li>
-                </ul>
-            </div>
-                            
-
-            
-
-
-            
-            
-
-                 <!--<div class="left-header">
-                    <ul class="explore-list">
-                        <li><a href="#" class="logo"><span class="octicon octicon-mark-github"></span></a></li>
-                        <li><form action="search"><input class="search-bar" type="text" placeholder="Search GitHub"></form></li>
-                        <a class="explore" href="https://github.com/explore">Explore</a>
-                        <a class="gist" href="https://gist.github.com">Gist</a>
-                        <a class="blog" href="https://github.com/blog">Blog</a>
-                        <<a class="help" href="https://help.github.com/">Help</a>
-                    </ul>
-                </div>-->
-                
-
-                <!--<div class="right-header">
-                        <ul class="listIcon">
-
-                                <li><img src="https://avatars.githubusercontent.com/u/10402427?v=3" alt="avatar" width="25px">
-                                <span class=user-name>jtareb</span></li>
-                                <li><span class="octicon octicon-plus"></span><span class="octicon octicon-triangle-down"></span></li>
-                                <li><span class="octicon octicon-inbox"></span></li>
-                                <li><span class="octicon octicon-gear"></span></li>
-                                <li><span class="octicon octicon-sign-out"></span></li>
-                            
-                        </ul>
-                </div>-->
-
-            
-            
-        </header>
-
-        <div class="sideBar">
-
-            <div class="sideBar">
-                <script type="text/template" id="userTemplate">
-                    <div class="userSidebar">
-                        <%=userAvatar%> 
-                        <span class="nameFull"><%=userName%></span>
-                        <span class="userLoginName"><%=userLogin%></span><br/>
-                        <span class="octicon octicon-clock">Joined on <%=joinedDate%></span>
-                        <div class="followers"><span><%=numFollower%></span><a href="<%=followersURL%>">Follower</a></div>
-                        <div class="starred"><span><%=starredNumber%></span><a href="<%=starredURL%>">Starred</a></div>
-                        <div class="following"><a href="<%=followingURL%>">Following</a></div>
-                        <div class="orgList"><span><%=orgIcons%>Organizations</span><a href="<%organizationsURL%>"</a></div>
-                    </div>
-
-    
-                </script>   
-
-            </div>
-        </div>
-
-    <div class="main">
-
-            <div class="tabBar">
                 <ul>
-                    <li><a href="#" class="conTab"><span class="octicon octicon-diff-added"></span>Contributions</a></li>
-                    <li><a href="#" class="repoTab"><span class="octicon octicon-repo"></span>Repositories</a></li>
-                    <li><a href="#" class="actTab"><span class="octicon octicon-rss"></span>Public Activity</a></li>
+                    <a href="https://github.com/explore"><li>Explore</li></a>
+                    <a href="https://gist.github.com"><li>Gist</li></a>
+                    <a href="https://github.com/blog"><li>Blog</li></a>
+                    <a href="https://help.github.com"><li>Help</li></a>
                 </ul>
-
-                <form action="https://github.com/settings/profile">
-                    <input class="editProfile" type="submit" value="Edit profile">
-                </form>
             </div>
 
-                
-        <div class="searchFilter">
+            <div class="userNavContainer">
+                <ul class="user-nav">
+                    <li>
+                        <a class="user" href="#">
+                        <img src="https://avatars.githubusercontent.com/u/10402427?v=3">
+                        <span>jtareb</span>
+                        </a>
+                    </li>
 
-            <form class="searchRepo">
-                <input type="text" id="input_area" placeholder="Find a Repository">
-                <input type="button" type="submit" value="search">
-            </form>
+                    <li>
+                        <a href="https://github.com/new"><span class="octicon octicon-plus"></span></a>
+                    </li>
 
-            <ul class="repoFilter">
-                <li><a href="#" class="allRepo">All</a></li>
-                <li><a href="#" class="publicRepo">Public</a></li>
-                <li><a href="#" class="privateRepo">Private</a></li>
-                <li><a href="#" class="sourceRepo">Sources</a></li>
-                <li><a href="#" class="forkRepo">Forks</a></li>
-                <li><a href="#" class="mirrorRepo">Mirrors</a></li>
-            </ul>
+                    <li>
+                        <a href="https://github.com/notifications"><span class="octicon octicon-inbox"></span></a>
+                    </li>
 
-            <form action="https://gitub.com/new">
-               <input class="newRepo" type="submit" value="New">
-            </form>
+                    <li>
+                        <a href="https://github.com/settings/profile"><span class="octicon octicon-gear"></span></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><span class="octicon octicon-sign-out"></span></a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </header>
 
-        <div class="innerMain">
-
-        <!--Main Template-->
-        <script type="text/template" id="repoTemplate">
-                <div class="item">
-                    <span class="nameLink"><%= repoLink %></span>
-                    <div class="descriptColor"><%= descript %></div>
-                    <div class="lastUp"><time><%= lastUpdated %></time></div>
-                    <div class="borderLine"></div>
-                </div>
-
-    
-        </script>   <!--end of template attempt-->
-
-
- 
+    <!--main content-->
 
 
 
 
 
-
-      </div>
-
-      </div><!--main section close brace-->
-      
-
-
-
+  
 
 
   <!-- build:js scripts/vendor.js -->
@@ -184,6 +88,7 @@
         <!-- build:js scripts/main.js -->
     <script src="scripts/repo.js"></script>
     <script src="scripts/user.js"></script>
+    <script src="scripts/org.js"></script>
     <script src="scripts/main.js"></script>
 
 </body>
