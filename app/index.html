@@ -26,22 +26,50 @@
 
         <header>
 
-            <nav>
+            <div class="leftHdr">
+                <a href="#" class="logo"><span class="octicon octicon-mark-github"></span></a>
+                <form class="searchText">
+                    <input type=:"text" id="input_area" placeholder="Search Github">
+                </form>
+                <a class="explore" href="https://github.com/explore">Explore</a>
+                <a class="gist" href="https://gist.github.com">Gist</a>
+                <a class="blog" href="https://github.com/blog">Blog</a>
+                <a class="help" href="https://help.github.com/">Help</a>
+            </div>
+
+
+            <div class="rightHdr">
+                 <ul class="listIcon">
+
+                    <li><img src="https://avatars.githubusercontent.com/u/10402427?v=3" alt="avatar" width="25px">
+                     <span class=user-name>jtareb</span></li>
+                    <li><span class="octicon octicon-plus"></span><span class="octicon octicon-triangle-down"></span></li>
+                    <li><span class="octicon octicon-inbox"></span></li>
+                    <li><span class="octicon octicon-gear"></span></li>
+                    <li><span class="octicon octicon-sign-out"></span></li>
+                </ul>
+            </div>
+                            
+
             
 
-                 <div class="left-header">
+
+            
+            
+
+                 <!--<div class="left-header">
                     <ul class="explore-list">
                         <li><a href="#" class="logo"><span class="octicon octicon-mark-github"></span></a></li>
                         <li><form action="search"><input class="search-bar" type="text" placeholder="Search GitHub"></form></li>
-                        <li><a class="explore" href="https://github.com/explore">Explore</a></li>
-                        <li><a class="gist" href="https://gist.github.com">Gist</a></li>
-                        <li><a class="blog" href="https://github.com/blog">Blog</a></li>
-                        <li><a class="help" href="https://help.github.com/">Help</a></li>
+                        <a class="explore" href="https://github.com/explore">Explore</a>
+                        <a class="gist" href="https://gist.github.com">Gist</a>
+                        <a class="blog" href="https://github.com/blog">Blog</a>
+                        <<a class="help" href="https://help.github.com/">Help</a>
                     </ul>
-                </div>
+                </div>-->
                 
 
-                <div class="right-header">
+                <!--<div class="right-header">
                         <ul class="listIcon">
 
                                 <li><img src="https://avatars.githubusercontent.com/u/10402427?v=3" alt="avatar" width="25px">
@@ -52,9 +80,9 @@
                                 <li><span class="octicon octicon-sign-out"></span></li>
                             
                         </ul>
-                </div>
+                </div>-->
 
-            </nav>
+            
             
         </header>
 
@@ -77,32 +105,23 @@
                 </script>   
 
             </div>
-            </div>
+        </div>
 
+    <div class="main">
 
-        <div class="main">
-
-            <ul class="navTabs">
-
-                <ul class="navTab-tabs">
+            <div class="tabBar">
+                <ul>
                     <li><a href="#" class="conTab"><span class="octicon octicon-diff-added"></span>Contributions</a></li>
                     <li><a href="#" class="repoTab"><span class="octicon octicon-repo"></span>Repositories</a></li>
                     <li><a href="#" class="actTab"><span class="octicon octicon-rss"></span>Public Activity</a></li>
                 </ul>
 
-                <form class="navTabRight">
-                   <input class="edit" type="submit" value="Edit Profile">
-                        <span class="octicon octicon-pencil"></span>
-                        
-                    </a>
+                <form action="https://github.com/settings/profile">
+                    <input class="editProfile" type="submit" value="Edit profile">
                 </form>
-        
-            </ul>
+            </div>
 
-        
-
-
-
+                
         <div class="searchFilter">
 
             <form class="searchRepo">
@@ -124,20 +143,33 @@
             </form>
         </div>
 
+        <div class="innerMain">
+
         <!--Main Template-->
-        <script type="text/template" id="repoTemp">
+        <script type="text/template" id="repoTemplate">
+                <div class="item">
+                    <span class="nameLink"><%= repoLink %></span>
+                    <div class="descriptColor"><%= descript %></div>
+                    <div class="lastUp"><time><%= lastUpdated %></time></div>
+                    <div class="borderLine"></div>
+                </div>
 
-            <div class="item">
-                <span class="nameLink"><%= repoLink %></span>
-                <span class="descriptColor"><%= descript %></div>
-                <div class="lastUp"><time><%= lastUpdated %></time><div>
-                <div class="border"></div>
-            </div>
-        </script>  <!--end of main template-->
+    
+        </script>   <!--end of template attempt-->
 
-    </div>
 
-</div>
+ 
+
+
+
+
+
+
+      </div>
+
+      </div><!--main section close brace-->
+      
+
 
 
 
