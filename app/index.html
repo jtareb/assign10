@@ -24,6 +24,8 @@
 
   <body>
 
+  <div class="container">
+
     <header>
 
         <div class="wrapper">
@@ -71,11 +73,77 @@
 
     <!--main content-->
 
+    <div class="sideBar">
+        <script type="text/template" id="userTemplate">
+           <div class="userInfo">
+                <%=userAvatar%>
+                <span class="nameFull"><%=username%></span>
+                <span class="userLoginName"><%=userLogin%></span>
+                <span class="joinedOnDate"><a href="octicon octicon-clock">Joined on<%=joinedDate%></a></span>
+                <div class="follower"><span><%=numFollower%></span><a href="<%=followersURL%>">Follower</a></div>
+                <div class="starred"><span><%=starredNumbers%></span><a href="<%=starredURL%>">Starred</a></div>
+                <div class="following"><a href="<%=followingURL>">Following</a></div>
+                <div class="orgList"><a href="<%=organizationsURL>">Organizations</a></div>
+            </div>
+        </script>
+    </div>
+
+    <div class="main">
+
+       <div class="tabBar">
+            <nav class="tabs">
+                <a href="https://github.com/jtareb">
+                    <span class="octicon octicon-diff-added"></span>
+                    Contributions
+                </a>
+                <a href="https://github.com/jtareb?tab=repositories">
+                    <span class="octicon octicon-repo"></span>
+                    Repositories
+                </a>
+                <a href="https://github.com/jtareb?tab=activity">
+                    <span class="octicon octicon-rss"></span>
+                    Public Activity
+                </a>
+            </nav>
+
+            <div class="rightTab">
+                <a href="https://github.com/account" class="btn btn-sm">
+                    <span class="octicon octicon-pencil">...</span>
+                    Edit Profile
+                </a>
+            </div>
+        </div>
+
+        <div class="tabSearch">
+
+            <form class="searchRepo">
+                <input type="text" id="input_area" placeholder="Find a Repository">
+                <input class="button" type="submit" value="Search">
+            </form>
+
+            <ul class="repoFilter">
+                <li><a href="https://github.com/jtareb?tab=repositories">All</a></li>
+                <li><a href="https://github.com/jtareb?tab=repositories">Public</a></li>
+                <li><a href="https://github.com/jtareb?tab=repositories">Private</a></li>
+                <li><a href="https://github.com/jtareb?tab=repositories">Sources</a></li>
+                <li><a href=" https://github.com/jtareb?tab=repositories">Forks</a></li>
+                <li><a href="https://github.com/jtareb?tab=repositories">mirrors</a></li>
+            </ul>
+
+            <div class="newRepo">
+                <a href="https://github.com/new" class="btn btn-primary new-repo">
+                    <span class="octicon octicon-repo">...</span>
+                    New
+                </a>
+            </div>
+
+
+
    
 
   
 
-
+</div>
   <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
