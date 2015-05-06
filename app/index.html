@@ -21,6 +21,8 @@
   </head>
   <body>
 
+    <div class="container">
+
 
         <header>
 
@@ -39,7 +41,7 @@
                 </div>
                 
 
-                <!--<div class="right-header">
+                <div class="right-header">
                         <ul class="listIcon">
 
                                 <li><img src="https://avatars.githubusercontent.com/u/10402427?v=3" alt="avatar" width="25px">
@@ -50,11 +52,95 @@
                                 <li><span class="octicon octicon-sign-out"></span></li>
                             
                         </ul>
-                </div>-->
+                </div>
 
             </nav>
             
         </header>
+
+        <div class="sideBar">
+
+            <div class="sideBar">
+                <script type="text/template" id="userTemplate">
+                    <div class="userSidebar">
+                        <%=userAvatar%> 
+                        <span class="nameFull"><%=userName%></span>
+                        <span class="userLoginName"><%=userLogin%></span><br/>
+                        <span class="octicon octicon-clock">Joined on <%=joinedDate%></span>
+                        <div class="followers"><span><%=numFollower%></span><a href="<%=followersURL%>">Follower</a></div>
+                        <div class="starred"><span><%=starredNumber%></span><a href="<%=starredURL%>">Starred</a></div>
+                        <div class="following"><a href="<%=followingURL%>">Following</a></div>
+                        <div class="orgList"><span><%=orgIcons%>Organizations</span><a href="<%organizationsURL%>"</a></div>
+                    </div>
+
+    
+                </script>   
+
+            </div>
+            </div>
+
+
+        <div class="main">
+
+            <ul class="navTabs">
+
+                <ul class="navTab-tabs">
+                    <li><a href="#" class="conTab"><span class="octicon octicon-diff-added"></span>Contributions</a></li>
+                    <li><a href="#" class="repoTab"><span class="octicon octicon-repo"></span>Repositories</a></li>
+                    <li><a href="#" class="actTab"><span class="octicon octicon-rss"></span>Public Activity</a></li>
+                </ul>
+
+                <form class="navTabRight">
+                   <input class="edit" type="submit" value="Edit Profile">
+                        <span class="octicon octicon-pencil"></span>
+                        
+                    </a>
+                </form>
+        
+            </ul>
+
+        
+
+
+
+        <div class="searchFilter">
+
+            <form class="searchRepo">
+                <input type="text" id="input_area" placeholder="Find a Repository">
+                <input type="button" type="submit" value="search">
+            </form>
+
+            <ul class="repoFilter">
+                <li><a href="#" class="allRepo">All</a></li>
+                <li><a href="#" class="publicRepo">Public</a></li>
+                <li><a href="#" class="privateRepo">Private</a></li>
+                <li><a href="#" class="sourceRepo">Sources</a></li>
+                <li><a href="#" class="forkRepo">Forks</a></li>
+                <li><a href="#" class="mirrorRepo">Mirrors</a></li>
+            </ul>
+
+            <form action="https://gitub.com/new">
+               <input class="newRepo" type="submit" value="New">
+            </form>
+        </div>
+
+        <!--Main Template-->
+        <script type="text/template" id="repoTemp">
+
+            <div class="item">
+                <span class="nameLink"><%= repoLink %></span>
+                <span class="descriptColor"><%= descript %></div>
+                <div class="lastUp"><time><%= lastUpdated %></time><div>
+                <div class="border"></div>
+            </div>
+        </script>  <!--end of main template-->
+
+    </div>
+
+</div>
+
+
+
 
   <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
