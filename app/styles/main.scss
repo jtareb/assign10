@@ -331,29 +331,9 @@ header {
       }    
     }
 
-    .tab-content-container {
-      @include outer-container;
-      
-      // .repos-container {
-      //   @include outer-container;
-      //   visibility: hidden;
-
-      //   .pop-repos {
-      //     @include span-columns(4 of 8);
-          
-      //     a {
-      //       @include repo-items;
-      //     }
-      //   }
-        
-      //   .repo-contributed-to {
-      //     @include span-columns(4 of 8);
-        
-      //     a {
-      //       @include repo-items;
-      //     }
-      //   }
-      // }
+    .contentContainer {
+        @include outer-container;
+     
       .filterBar {
         display: block;
         border-bottom: 1px solid $line-grey;
@@ -411,7 +391,7 @@ header {
             border: 1px solid #D5D5D5;
             float: left;
             font-size: 13px;
-            // outline: none;
+            
           }
         }
 
@@ -436,5 +416,7 @@ header {
       }
     }
   }
+
 }
+
 
