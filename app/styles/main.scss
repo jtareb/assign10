@@ -115,10 +115,10 @@ body {
   @include span-columns(12);
   min-width: 1100px;
 }
-.container {
-  @include outer-container;
-  background-color: white;
-}
+//.container {
+ // @include outer-container;
+ // background-color: white;
+//}
 
 ////////////////////////////////////////////////
 /*HEADER//////////////////////////////////////*/
@@ -196,108 +196,78 @@ header {
 }
 
 //SideBar
-
 .sideBar {
-  @include span-columns (3);
-  height: 800px;
-  background-color: white;
-  padding-top: 20px;
-}
+  @include span-columns(3);
+  display: inline-block;
 
-.joinedOnDate{
-  font-size: 13px;
-  border-top:1px solid lightgrey;
-  line-height: 85px;
-  padding-top; 18px;
-  padding-right: 23px;
+      .userProfile {
+        border-bottom: 1px solid $light-grey;
+        padding: 20px 0px;
 
-}
+            a {
+              width: 230px;
+              height: 230px;
+              border-radius: 5px;
+            }
+        
 
-.joinedOnDate a {
-  width: 14px;
-}
-
-.nameFull{
-  display: block;
-  overflow: hidden;
-  width: 100px;
-  font-size: 26px;
-  line-height: 30px;
-  text-overflow: ellipsis;
-  font-weight: 800;
-
-}
-
-.userLoginName {
-  font-size: 20px;
-  color: HSLA(0, 0%, 40%, 1);
-
-}
-
-.main {
-  @include span-columns(9);
-  background-color: white;
-
-}
-
-.tabSearch {
-  @include span-columns(12);
-  height: 60px;
-  border-top:1px solid lightgrey;
-  border-bottom:1px solid lightgrey;
-  text-align: middle;
-}
-
-.tabBar {
-  @include span-columns(12);
-  height: 55px;
-  background-color: white;
-
-    .tabs {
-      float: left;
-
-      span {
-        float: left;
-        list-style: none;
-        padding-left: 30px;
+        h4 {
+          font-weight: 200;
+          color: $dark-grey;
+          font-size: 20px;
+        }
       }
-    }
 
-    .rightTab {
-      float: left:
-      margin-left: 175px;
-      margin-top: 9px;
-      height: 36px;
-    }
+      .userInfo {
+        padding: 15px;
+        border-bottom: 1px solid $light-grey;
+          span {
+            font-size: 16px;
+          }
+          p {
+            display: inline-block;
+            font-size: 14px;
+            padding: 3px 0px;
+            margin-left: 5px;
+          }
+        }
 
-}
+        .userStats {
+          padding: 15px 0px;
+          border-bottom: 1px solid $light-grey;
+            a {
+              display: inline-block;
+              text-align: center;
+              padding: 0px 15px;
+              color: #999999;
+                h3 {
+                  color: $blue;
+                  font-size: 28px;
+                  font-weight: 700;
+                  line-height: 1;
+                }
+                span {
+                  font-size: 11px;
+                }
+                &:hover {
+                  color: $blue;
+                }
 
-.searchRepo {
-  float: left;
-  padding-top: 17px;
-}
+            }
+        }
 
-.repoFilter li:first-child{
-  padding-left: 38px;
-}
+        .userOrg {
+          padding: 15px 0px;
+          border-bottom: 1px solid $light-grey;
+          h4 {}
+          a {
+            height: 42px;
+            width: 42px;
+            margin: 15px 0px;
+          }
 
-.repoFilter li{
-  float: left;
-  list-style: none;
-  padding-left: 15px;
-  padding-top: 4px;
-}
-
-.newRepo {
-  margin-left: 17px;
-  line-height: 33px;
-  margin-top: -6px;
-  background-color: HSLA(105, 57%, 57%, 1);
-  color: white;
-  border-color: HSLA(104, 44%, 46%, 1);
-}
-
-
+        }
+      }
 
 
 
