@@ -199,7 +199,10 @@ header {
   @include span-columns(3);
   display: inline-block;
 
-      .userProfile {
+
+
+
+     .userProfile {
         border-bottom: 1px solid $light-grey;
         padding: 20px 0px;
 
@@ -214,7 +217,7 @@ header {
           font-weight: 200;
           color: $dark-grey;
           font-size: 20px;
-        }
+       }
       }
 
       .userInfo {
@@ -222,7 +225,7 @@ header {
         border-bottom: 1px solid $light-grey;
           span {
             font-size: 16px;
-          }
+         }
           p {
             display: inline-block;
             font-size: 14px;
@@ -258,14 +261,14 @@ header {
         .userOrg {
           padding: 15px 0px;
           border-bottom: 1px solid $light-grey;
-          h4 {}
+         h4 {}
           a {
             height: 42px;
-            width: 42px;
+           width: 42px;
             margin: 15px 0px;
           }
 
-        }
+       }
       }
 
     .rightSide {
@@ -331,7 +334,7 @@ header {
       }    
     }
 
-    .contentContainer {
+    .content-container {
         @include outer-container;
      
       .filterBar {
@@ -417,6 +420,66 @@ header {
     }
   }
 
+}
+.repo-list {
+  
+  ul {    
+    li {
+      padding: 25px 0px;
+      border-bottom: 1px solid $light-grey;
+      overflow: auto;
+      position: relative;
+
+      a {
+        display: inline-block;
+        color: $blue;
+        font-size: 20px;
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+        
+      .side-tags {
+        display: inline-block;
+        color: $star-grey;
+        font-weight: bold;
+        font-size: 12px;
+        position: absolute;
+        top: 35px;
+        right: 0px;
+
+        span {
+          display: inline-block;
+          margin-left: 5px;
+        }
+        .stars {
+          display: inline-block;
+          margin-left: 5px;
+          span {
+            margin: 0px;
+          }
+        }
+        .branches {
+          display: inline-block;
+          margin-left: 5px;
+          span {
+            margin: 0px;
+          }
+        }
+      }
+      .description {
+        color: $dark-grey;
+        font-size: 14px; 
+        padding: 10px 0px;
+      }
+      .updated {
+        color: $star-grey;
+        font-size: 13px;
+        padding: 5px 0px; 
+      }
+    }
+  }
 }
 
 

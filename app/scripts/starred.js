@@ -1,1 +1,0 @@
-var starred_items = []
