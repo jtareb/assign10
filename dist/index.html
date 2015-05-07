@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>gitrepo</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+  </head>
+
+
+
+  <body>
+
+  
+
+    <header>
+
+        <div class="wrapper">
+            <div class="search-container">
+                <a href="#"><span class="mega-octicon octicon-mark-github"></span></a>
+                <form>
+                    <input class="searchBar" type="text" placeholder="Search Github">
+                </form>
+                <ul>
+                    <a href="https://github.com/explore"><li>Explore</li></a>
+                    <a href="https://gist.github.com"><li>Gist</li></a>
+                    <a href="https://github.com/blog"><li>Blog</li></a>
+                    <a href="https://help.github.com"><li>Help</li></a>
+                </ul>
+            </div>
+
+            <div class="userNavContainer">
+                <ul class="user-nav">
+                    <li>
+                        <a class="user" href="#">
+                        <img src="https://avatars.githubusercontent.com/u/10402427?v=3">
+                        <span>jtareb</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/new"><span class="octicon octicon-plus"></span></a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/notifications"><span class="octicon octicon-inbox"></span></a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/settings/profile"><span class="octicon octicon-gear"></span></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><span class="octicon octicon-sign-out"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!--main content-->
+<div class="main">
+    <!--sidbar-->
+    <div class="sideBar">
+       
+      
+
+
+        
+        <script type="text/template" id="user-template">
+            <div class="userProfile">
+                <a href=""><img class="pic" src="https://avatars.githubusercontent.com/u/10402427?v=3"></img</a>
+                <h2 class="name"><%= name %><h2>
+                <h4 class="username"><%+ login %></h4>
+            </div>
+
+            <ul class="userInfo">
+                <li>
+                <span class="octicon octicon-clock"></span>
+                <p>Joined on <%= created_at %></p>
+                </li>
+            </ul>
+
+            <div class="userStats">
+                <a href=<%= followers_url %>>
+                    <h3><%= followers %></h3>
+                    <span>Followers</span>
+                </a>
+
+                <a href=<%= starred_url %>>
+                    <h3><%= public_gists %></h3>
+                    <span>Starred</span>
+                </a>
+
+                <a href=<%= following_url %>>
+                    <h3><%= following %></h3>
+                    <span>Following</span>
+                </a>
+            </div>
+        </script>
+
+        <script type="text/template" id="org-template">
+            <div class="userOrg">
+                <h4>Organizations</h4>
+                <a href="https://api.github.com/users/jtareb/orgs"></a>
+            </div>
+        </script>
+    </div>
+
+
+    
+    <section class="rightSide">
+
+        <div class="editProfile">
+            <a href="https://gituhb.com/new">
+                <span class="octicon octicon-pencil"></span>
+                <p>Edit Profile</p>
+            </a>
+        </div>
+
+        <div class="tabs">
+            <ul>
+                <li>
+                    <a href="https://github.com/jtareb">
+                        <span class="octicon octicon-diff-added"></span>
+                        <h4>Contributions</h4>
+                    </a>
+                </li>
+                <li class="selected">
+                    <a href="https://github.com/jtareb?tab=repositories">
+                        <span class="octicon octicon-repo"></span>
+                        <h4>Repositories</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/jtareb?tab=activity">
+                        <span class="octicon octicon-rss"></span>
+                        <h4>Public Activity</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    <div class="content-container">
+        <div class="filterBar">
+            <a href="https://github.com/new" class="newBtn">
+                <span class="octicon octicon-repo"></span>
+                <p>New</p>
+            </a>
+
+            <ul class="filters">
+                <li class="active-filter">
+                    <a href="#">All</a>
+                </li>
+                <li>
+                    <a href="#">Public</a>
+                </li>
+                <li>
+                    <a href="#">Private</a>
+                </li>
+                <li>
+                    <a href="#">Sources</a>
+                </li>
+                <li>
+                    <a href="#">Forks</a>
+                </li>
+                <li>
+                    <a href="#">Mirrors</a>
+                </li>
+            </ul>
+
+            <form class="filterSearch">
+                <input placeholder="Find a repository..." />
+            </form>
+            <a href="#">
+                <div class="filterBtn">
+                    <span>search</span>
+                </div>
+            </a>
+        </div>
+
+       <script type="text/template" id="repo-list-template">
+          <div class="repo-list">
+            
+            <ul>
+              <li>
+                <a href=<%= html_url %>><%= name %></a>
+                <div class="side-tags">
+                  <span><%= language %></span>
+                  <div class="stars">
+                    <span class="octicon octicon-star"></span>
+                    <span><%= stargazers_count %></span>
+                  </div>
+                  <div class="branches">
+                    <span class="octicon octicon-git-branch"></span>
+                    <span><%= forks %></span>
+                  </div>
+                </div>
+                <p class="description">
+                  <%= description %>
+                </p>
+                <p class="updated">
+                  <%= updated_at %>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </script>
+
+
+
+
+    </div>
+    
+    </section>
+
+
+   
+
+  
+
+  <script src="scripts/vendor.js"></script>
+
+        <script src="scripts/main.js"></script>
