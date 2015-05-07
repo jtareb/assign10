@@ -24,7 +24,7 @@
 
   <body>
 
-  <div class="container">
+  
 
     <header>
 
@@ -115,11 +115,80 @@
         </script>
     </div>
 
+    <!--nav bars-->
+    <div clas="rightSide">
+
+        <div class="editProfile">
+            <a href="https://gituhb.com/new">
+                <span class="octicon octicon-pencil"></span>
+                <p>Edit Profile</p>
+            </a>
+        </div>
+
+        <div class="tabs">
+            <ul>
+                <li>
+                    <a href="https://github.com/jtareb">
+                        <span class="octicon octicon-diff-added"></span>
+                        <h4>Contributions</h4>
+                    </a>
+                </li>
+                <li class="selected">
+                    <a href="https://github.com/jtareb?tab=repositories">
+                        <span class="octicon octicon-repo"></span>
+                        <h4>Repositories</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/jtareb?tab=activity">
+                        <span class="octicon octicon-rss"></span>
+                        <h4>Public Activity</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="filterBar">
+            <a href="https://github.com/new" class="newBtn">
+                <span class="octicon octicon-repo"></span>
+                <p>New</p>
+            </a>
+
+            <ul class="filters">
+                <li class="active-filter">
+                    <a href="#">All</a>
+                </li>
+                <li>
+                    <a href="#">Public</a>
+                </li>
+                <li>
+                    <a href="#">Private</a>
+                </li>
+                <li>
+                    <a href="#">Sources</a>
+                </li>
+                <li>
+                    <a href="#">Forks</a>
+                </li>
+                <li>
+                    <a href="#">Mirrors</a>
+                </li>
+            </ul>
+
+            <form class="filterSearch">
+                <input placeholder="Find a repository..." />
+            </form>
+            <a href="#">
+                <div class="filterBtn">
+                    <span>search</span>
+                </div>
+            </a>
+        </div>
+
    
 
   
 
-</div>
   <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
