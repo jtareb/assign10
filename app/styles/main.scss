@@ -206,7 +206,7 @@ header {
         border-bottom: 1px solid $light-grey;
         padding: 20px 0px;
 
-            a {
+            img {
               width: 230px;
               height: 230px;
               border-radius: 5px;
@@ -224,13 +224,14 @@ header {
         padding: 15px;
         border-bottom: 1px solid $light-grey;
           span {
+            float: left;
             font-size: 16px;
          }
           p {
             display: inline-block;
             font-size: 14px;
             padding: 3px 0px;
-            margin-left: 5px;
+            margin-left: 10px;
           }
         }
 
@@ -240,7 +241,7 @@ header {
             a {
               display: inline-block;
               text-align: center;
-              padding: 0px 15px;
+              padding: 0px 10px;
               color: #999999;
                 h3 {
                   color: $blue;

@@ -5,5 +5,5 @@ $('.sideBar').append(_.template($('#org-template').text())(org));
 
 
 repos.forEach(function (repo) {
-$('.content-container').append(_.template($('#repo-list-template').text())(repoAPI));
+$('.content-container').append(_.template($('#repo-list-template').text())(repo));
 });
