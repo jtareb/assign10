@@ -1,4 +1,4 @@
-var userAPI={
+var user={
 "login": "jtareb",
 "id": 10402427,
 "avatar_url": "https://avatars.githubusercontent.com/u/10402427?v=3",
